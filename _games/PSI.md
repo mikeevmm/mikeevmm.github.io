@@ -2,7 +2,7 @@
 layout: game
 title: Planet Squares Inc.
 blurb: My biggest project so far.
-thumb: PSIlogo.png
+thumb: PSILogo.png
 screenshots:
     - psi/1.png
     - psi/2.png
