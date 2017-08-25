@@ -1,0 +1,29 @@
+---
+# Front matter
+---
+// 1. Import the initial variables
+@import "bulma/sass/utilities/initial-variables"
+
+// 2. Set your own initial variables
+$primary: #609732
+$info: #29506D
+
+// 4. Import the rest of Bulma
+@import "bulma/bulma"
+
+.is-translucid
+    opacity: 0.2
+
+.is-covering
+    object-fit: cover
+
+.game-box
+    max-width: 400px
+    max-height: 400px
+
+.game-box .is-translucid:hover
+    opacity: 0.6
+
+@for $padding from 1 through 10
+    .padding-top-#{$padding*5}
+        padding-top: #{$padding*5}vh

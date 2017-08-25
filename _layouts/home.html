@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<section class="hero is-fullheight is-primary">
+    <div class="hero-body">    
+    <div class="container is-large is-unselectable">
+        <div class="columns is-mobile is-vcentered">
+            <div class="column is-8" style="height: inherit;">
+                <h1 class="title is-uppercase is-size-1">{{ page.title }}</h1> 
+                <p class="subtitle">{{ page.bio }}</p>
+            </div>
+            <div class="column auto">
+                <figure class="image is-square">
+                    <img src="{{ site.url }}/assets/me.png">
+                </figure>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="section is-large">
+    <div class="container is-unselectable">
+        <h1 class="title">{{ page.projects_subtitle }}</h1>
+
+        {% capture count %}{{ site.list_horizontal_count }}{% endcapture %}
+        {% for game in site.games %}
+            {% assign loopindex = forloop.index0 | modulo: count %}
+            {% if loopindex == 0 or forloop.first %}
+                {% unless forloop.first %}
+                </div>
+                {% endunless %}
+                <div class="tile is-ancestor">
+            {% endif %}
+                    <div class="tile is-parent">
+                    <a href="{{ game.url }}">
+                        <div class="tile is-child box game-box">
+                            {%if game.thumb %}
+                            <figure class="image is-overlay">
+                                <img src="{{ site.url }}/assets/{{ game.thumb }}" class="is-square is-translucid is-covering">
+                                <div class="container">
+                                    <p class="title">{{ game.title }}</p>
+                                    <p class="subtitle">{{ game.excerpt }}</p>
+                                </div>
+                            </figure>
+                            {% else %}
+                            <div class="content has-text-centered">
+                                <p class="title">{{ game.title }}</p>
+                                {{ game.excerpt }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </a>
+                    </div>
+            {% if forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+</section>
+
+<section class="hero is-fullheight is-info">
+    <div class="hero-body">
+        <div class="container is-large">
+            <div class="columns is-mobile is-vcentered">
+                <div class="column">
+                    <h1 class="title is-uppercase is-size-1">Social</h1>
+                    <p class="subtitle">{{ page.social_subtitle }}</p>
+                </div>
+                <div class="column">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

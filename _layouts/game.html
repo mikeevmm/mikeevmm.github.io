@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+
+<section class="section padding-top-5">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+        <ul>
+            <li><a href="{{ site.url }}">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">{{ page.title }}</a></li>
+        </ul>
+    </nav>
+    
+    <div class="padding-top-20">
+    </div>
+
+    <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column auto has-text-centered">
+            <h1 class="title">{{ page.title }}</h1>
+        </div>
+        <div class="column is-2"></div>
+    </div>
+    <div class="container">
+        <div class="content has-text-centered">
+            {{ content }}
+        </div>
+    </div>
+</section>
+
+{% if page.embed %}
+<section class="section">
+    {{ page.embed }}
+</section>
+{% endif %}
+
+{% if page.screenshots %}
+<section class="section">
+    {% capture count %}{{ site.screenshot_horizontal_count }}{% endcapture %}
+    {% for screenshot in page.screenshots %}
+        {% assign loopindex = forloop.index0 | modulo: count %}
+        {% if loopindex == 0 or forloop.first %}
+            {% unless forloop.first %}
+            </div>
+            {% endunless %}
+            <div class="tile is-ancestor">
+        {% endif %}
+        <div class="tile is-parent">
+            <figure class="tile is-child image">
+                <img src="{{ site.url }}/assets/{{ screenshot }}">
+            </figure>
+       </div>
+    {% endfor %}
+</section>
+{% endif %}
