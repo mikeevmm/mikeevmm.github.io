@@ -41,7 +41,9 @@ layout: default
                                 <img src="{{ site.url }}/assets/{{ game.thumb }}" class="is-square is-translucid is-covering">
                                 <div class="container">
                                     <p class="title">{{ game.title }}</p>
-                                    <p class="subtitle">{{ game.excerpt }}</p>
+                                    {% if game.blurb %}
+                                    <p class="subtitle">{{ game.blurb }}</p>
+                                    {% endif %}
                                 </div>
                             </figure>
                             {% else %}
@@ -70,7 +72,13 @@ layout: default
                     <p class="subtitle">{{ page.social_subtitle }}</p>
                 </div>
                 <div class="column">
-
+                    <a href="https://twitter.com/{{ site.twitter_username }}">
+                        <span class="icon"><i class="fa fa-twitter"></i></span>
+                        <span class="underline-on-hover">@{{ site.twitter_username }}</span>
+                    </a>
+                </div>
+                <div class="column">
+                    {% include icon-itchio.html %}
                 </div>
             </div>
         </div>
