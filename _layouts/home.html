@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="hero is-fullheight is-primary">
+<section class="hero is-fullheight is-primary" id="intro">
     <div class="hero-body">    
     <div class="container is-large is-unselectable">
         <div class="columns is-mobile is-vcentered">
@@ -20,7 +20,7 @@ layout: default
     </div>
 </section>
 
-<section class="section is-large">
+<section class="section is-large" id="projects">
     <div class="container is-unselectable">
         <h1 class="title">{{ page.projects_subtitle }}</h1>
 
@@ -63,22 +63,25 @@ layout: default
     </div>
 </section>
 
-<section class="hero is-fullheight is-info">
+<section class="hero is-fullheight is-info" id="social">
     <div class="hero-body">
         <div class="container is-large">
             <div class="columns is-mobile is-vcentered">
-                <div class="column">
-                    <h1 class="title is-uppercase is-size-1">Social</h1>
-                    <p class="subtitle">{{ page.social_subtitle }}</p>
+                <div class="column is-4">
+                    <h1 class="title is-uppercase is-size-1-tablet is-size-5-mobile">Social</h1>
+                    <p class="subtitle is-size-3-tablet is-size-7-mobile">{{ page.social_subtitle }}</p>
                 </div>
-                <div class="column">
+                <div class="column auto has-text-centered">
                     <a href="https://twitter.com/{{ site.twitter_username }}">
                         <span class="icon"><i class="fa fa-twitter"></i></span>
                         <span class="underline-on-hover">@{{ site.twitter_username }}</span>
                     </a>
                 </div>
-                <div class="column">
-                    {% include icon-itchio.html %}
+                <div class="column auto has-text-centered">
+                    <a href="https://{{ site.itchio_username }}.itch.io">
+                        <span class="icon"><i class="fa fa-gamepad"></i></span>
+                        <span class="underline-on-hover">{{ site.itchio_username }} on itch.io</span>
+                    </a>
                 </div>
             </div>
         </div>
