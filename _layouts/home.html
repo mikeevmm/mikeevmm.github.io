@@ -31,29 +31,24 @@ layout: default
                 {% unless forloop.first %}
                 </div>
                 {% endunless %}
-                <div class="tile is-ancestor is-centered">
+                <div class="tile is-ancestor">
             {% endif %}
-                    <div class="tile is-parent is-centered">
-                    <a href="{{ game.url }}">
-                        <div class="tile is-child box game-box is-centered">
+                    <div class="tile is-parent">
+                        <article class="tile is-child box game-box has-text-centered">
+                            <a href="{{ game.url }}">
                             {%if game.thumb %}
-                            <figure class="image">
+                            <figure class="image align-block">
                                 <img src="{{ site.url }}/assets/{{ game.thumb }}" class="is-translucid is-covering">
-                                <div class="container">
-                                    <p class="title">{{ game.title }}</p>
-                                    {% if game.blurb %}
-                                    <p class="subtitle is-6">{{ game.blurb }}</p>
-                                    {% endif %}
-                                </div>
                             </figure>
-                            {% else %}
-                            <div class="content has-text-centered">
-                                <p class="title">{{ game.title }}</p>
-                                {{ game.excerpt }}
-                            </div>
                             {% endif %}
-                        </div>
-                    </a>
+                            <div class="content">
+                                <p class="title">{% if game.short_title %}{{ game.short_title }}{% else %}{{ game.title }}{% endif %}</p>
+                                {% if game.blurb %}
+                                <p class="subtitle is-6">{{ game.blurb }}</p>
+                                {% endif %}
+                            </div>
+                            </a>
+                        </article>
                     </div>
             {% if forloop.last %}
                 </div>
