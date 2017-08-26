@@ -22,10 +22,9 @@ body
 
 .game-box
     max-width: 400px
-    max-height: 400px
 
 .game-box .is-translucid:hover
-    opacity: 0.6
+    opacity: 0.9
 
 @for $padding from 1 through 10
     .padding-top-#{$padding*5}
@@ -45,3 +44,28 @@ body
 
 .fill-screen
     min-height: 100vh
+
+.game-screenshot
+    img
+        display: block
+        margin: 0 auto
+        max-height: 40vh
+
+.top-auto
+    margin-top: auto
+
+.bottom-auto
+    margin-bottom: auto
+
+.auto-vcenter
+    margin-top: auto
+    margin-bottom: auto
+
+.align-block
+    display: block
+    margin: 0 auto
+
+.game-embed
+    width: inherit
+    iframe
+        max-width: 100%

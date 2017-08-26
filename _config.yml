@@ -22,7 +22,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mikeevmm
 github_username:  mikeevmm
 itchio_username: miguelmurca
-list_horizontal_count: 4
+list_horizontal_count: 3
 screenshot_horizontal_count: 5
 
 # Build settings

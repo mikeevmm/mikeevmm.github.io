@@ -31,18 +31,18 @@ layout: default
                 {% unless forloop.first %}
                 </div>
                 {% endunless %}
-                <div class="tile is-ancestor">
+                <div class="tile is-ancestor is-centered">
             {% endif %}
-                    <div class="tile is-parent">
+                    <div class="tile is-parent is-centered">
                     <a href="{{ game.url }}">
-                        <div class="tile is-child box game-box">
+                        <div class="tile is-child box game-box is-centered">
                             {%if game.thumb %}
-                            <figure class="image is-overlay">
-                                <img src="{{ site.url }}/assets/{{ game.thumb }}" class="is-square is-translucid is-covering">
+                            <figure class="image">
+                                <img src="{{ site.url }}/assets/{{ game.thumb }}" class="is-translucid is-covering">
                                 <div class="container">
                                     <p class="title">{{ game.title }}</p>
                                     {% if game.blurb %}
-                                    <p class="subtitle">{{ game.blurb }}</p>
+                                    <p class="subtitle is-6">{{ game.blurb }}</p>
                                     {% endif %}
                                 </div>
                             </figure>
