@@ -2,7 +2,7 @@
 layout: game
 title: Pon
 blurb: An exercise on design.
-thumb: pon/thumb.png
+thumb: pon/thumb.PNG
 screenshots:
     - pon/pawnIn-optimized.gif
     - pon/3.png
