@@ -4,11 +4,11 @@ title: RocketLaunch
 blurb: The first game I published.
 thumb: rocketlaunch/Rocket.png
 screenshots:
-    - rocketlaunch/7.png
+    - rocketlaunch/7.PNG
     - rocketlaunch/1.png
     - rocketlaunch/2.png
-    - rocketlaunch/4.png
-    - rocketlaunch/6.png
+    - rocketlaunch/4.PNG
+    - rocketlaunch/6.PNG
 embed: >
     <div style="width: 100%; display: block; margin: 0 auto;">
     <iframe src="https://widgets.gamejolt.com/package/v1?key=ipxzViWX&theme=dark" frameborder="0" width="260" height=160" style="display:block; margin: 0 auto;"></iframe>
