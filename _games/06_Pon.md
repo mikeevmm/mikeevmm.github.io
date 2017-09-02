@@ -22,3 +22,6 @@ Eventually, the game's focus shifted to a smooth design, inspired by that of [Mo
 converging into what it is now.
 
 It's the first full game I published made on Unity and targeting HTML5.
+
+- HTML5 (Unity)
+- Puzzle

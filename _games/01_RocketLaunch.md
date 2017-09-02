@@ -20,3 +20,6 @@ and was an active member of its forums. There I made contact with [KickbackGames
 eventually releasing the game for android with them.
 
 The original web (flash) version is still up at [Gamejolt](https://gamejolt.com/games/rocketlaunch/23903).
+
+- Flash (FlashPunk)
+- Puzzle/Casual

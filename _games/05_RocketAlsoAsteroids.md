@@ -25,3 +25,6 @@ On the other hand, Help etc. was, undoubtly, the culmination of the naming conve
 budding so far. An exorcism of sorts.
 
 I'd like to remake it some time, and expand on what's already there.
+
+- Flash (Haxe + HaxeFlixel)
+- Rhythm/Action

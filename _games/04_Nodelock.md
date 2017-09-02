@@ -23,3 +23,6 @@ In the end, Nodelock was an exercise in web design, specifically with the [Meteo
 and the first time I made a web app.
 
 Maybe one day Nodelock comes back as a mobile game, when the technology is there.
+
+- Web (Meteor Framework)
+- Experimental/Geocaching derivative

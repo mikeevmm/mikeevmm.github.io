@@ -22,3 +22,6 @@ is not central to the gameplay and intends to be unobtrusive, I was able to deve
 
 It's, personally, my favourite project so far, and undoubetly the most successful one: it won several awards
 at [MakerFaire Lisbon 2016](http://makerfairelisbon.com/en/).
+
+- Desktop (Haxe + HaxeFlixel)
+- Local multiplayer/Party game

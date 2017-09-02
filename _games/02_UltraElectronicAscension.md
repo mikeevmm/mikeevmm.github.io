@@ -18,4 +18,9 @@ game.
 Heavily inspired by [Electronic Super Joy](http://www.electronicsuperjoy.com/), it features
 fast electronic tracks --- in fact, the best part of development was speaking to every composer.
 
+[It was featured in Warp Door.](http://warpdoor.com/2014/08/09/ultra-electronic-ascension-miguel-murca/)
+
 The game can be found on [itch.io](https://miguelmurca.itch.io/uea).
+
+- Flash (FlashPunk)
+- Action
