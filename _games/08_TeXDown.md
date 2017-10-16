@@ -4,8 +4,8 @@ title: TeXDown
 blurb: A tool.
 thumb: texdown/thumb.png
 screenshots:
-    - texdown/1.png
     - texdown/2.png
+    - texdown/1.png
     - texdown/5.png
     - texdown/3.png
     - texdown/4.png
