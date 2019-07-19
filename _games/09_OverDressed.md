@@ -17,13 +17,13 @@ but quickly went on to make it to print.
 It is my first contact with physical games, which I hope
 does well.
 
-~~ At the time of writing it is on sale on [BigCartel][BC].~~ 
+~~At the time of writing it is on sale on [BigCartel][BC].~~ 
 
 ~~[BigCartel Page for OverDressed][buy]~~ 
 
 I'm currently considering a revamp of the game, so I've put BigCartel on hold for now. News soon<sup><sup>hopefully</sup></sup>!
 
-===
+---
 
 <br>
 
