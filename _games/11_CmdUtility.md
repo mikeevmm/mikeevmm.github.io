@@ -24,7 +24,7 @@ Started out as a LaTeX template utility (and used to be called `latextemplate` )
 but it was so useful that I promoted it to a general purpose tool. Includes templates for C, 
 C++, LaTeX, and Python with C extensions projects, among others.
 
-[Quik](https://github.com/mikeevmm/template) --- Essentially, a bookmark tool for directories in
+[Quik](https://github.com/mikeevmm/quik) --- Essentially, a bookmark tool for directories in
 the terminal. This application evolved from having a million different `alias X="cd X"` in my `bash_aliases` , 
 which isn't very recommended anyway. I used some fun tricks to change directory from the parent shell, 
 while still writing most of the logic in Python, with Docopt.
