@@ -35,6 +35,8 @@ you to, e.g., drink water. I wanted something minimal, customizable, and for Lin
 documentation on the fly, along with some more weird-but-cool stuff like storing a hash of itself to detect
 changes. 
 
+[POMO](https://github.com/mikeevmm/pomo) --- What better way to procastinate real work than to build my own pomodoro timer? Turns out there's already a few CLI pomodoro timers (it's not a super original idea after all), but the tightness of`pomo` works in its favor.
+
 ---
 
 <br>
