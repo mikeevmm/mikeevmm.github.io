@@ -1,4 +1,3 @@
-_site
-.sass-cache
-.jekyll-metadata
-.vscode
+.*
+!.gitignore
+node_modules
