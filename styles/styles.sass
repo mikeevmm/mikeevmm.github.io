@@ -60,7 +60,7 @@ $mobile-limit: 500px
                 height: 100%
 
             .bg
-                @keyframes spin
+                @keyframes bg-spin
                     0%
                         transform: rotate(0deg)
                     100%
@@ -68,7 +68,7 @@ $mobile-limit: 500px
 
                 width: 100%
                 height: 100%
-                animation: spin 30s linear infinite
+                animation: bg-spin 30s linear infinite
                 overflow: hidden
 
         .circle
@@ -145,11 +145,46 @@ $mobile-limit: 500px
             padding-right: 0
             padding-top: 3vh
             max-width: 90vw
+
+        a
+            color: inherit
+            text-decoration: none
+
+            $underline-size: 6px
+            
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg preserveAspectRatio='xMinYMin meet' id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift 2s linear infinite;}@keyframes shift {from {transform:translateX(0); stroke-dashoffset:0;}to {transform:translateX(-20px); stroke-dashoffset:-14;}}%3C/style%3E%3Cpath fill='none' stroke='%23aeaeae' stroke-dasharray='5,2' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
+            //background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
+            background-position: 0 1.1em
+            background-size: auto $underline-size
+            background-repeat: repeat-x
+            padding-bottom: $underline-size
+
+        //a:hover
     
     .me
+        position: relative
         display: block
         height: 50vh
-        border-radius: 50%
 
         @media screen and ( max-width: $mobile-limit )
             height: 30vh
+        
+        .circle
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 110%
+            height: 110%
+
+            @keyframes circle-spin
+                0%
+                    transform: translate(-50%, -50%) rotate(0deg)
+                100%
+                    transform: translate(-50%, -50%) rotate(360deg)
+
+            animation: circle-spin 120s linear infinite
+
+        .class
+            width: 100%
+            height: 100%
+            border-radius: 50%

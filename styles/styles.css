@@ -75,12 +75,12 @@
 #splash .container .bg-container .bg {
   width: 100%;
   height: 100%;
-  -webkit-animation: spin 30s linear infinite;
-          animation: spin 30s linear infinite;
+  -webkit-animation: bg-spin 30s linear infinite;
+          animation: bg-spin 30s linear infinite;
   overflow: hidden;
 }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes bg-spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -91,7 +91,7 @@
   }
 }
 
-@keyframes spin {
+@keyframes bg-spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -216,15 +216,63 @@
   }
 }
 
+#bio .text-container a {
+  color: inherit;
+  text-decoration: none;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg preserveAspectRatio='xMinYMin meet' id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift 2s linear infinite;}@keyframes shift {from {transform:translateX(0); stroke-dashoffset:0;}to {transform:translateX(-20px); stroke-dashoffset:-14;}}%3C/style%3E%3Cpath fill='none' stroke='%23aeaeae' stroke-dasharray='5,2' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 1.1em;
+  background-size: auto 6px;
+  background-repeat: repeat-x;
+  padding-bottom: 6px;
+}
+
 #bio .me {
+  position: relative;
   display: block;
   height: 50vh;
-  border-radius: 50%;
 }
 
 @media screen and (max-width: 500px) {
   #bio .me {
     height: 30vh;
   }
+}
+
+#bio .me .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  -webkit-animation: circle-spin 120s linear infinite;
+          animation: circle-spin 120s linear infinite;
+}
+
+@-webkit-keyframes circle-spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes circle-spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+#bio .me .class {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=styles.css.map */
