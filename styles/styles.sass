@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@500&display=swap')
 
 $background: #fefefe
 $black: #0e0e0e
+$light-accent: #aeaeae
 
 $mobile-limit: 500px
 
@@ -13,6 +14,7 @@ $mobile-limit: 500px
     overflow-x: hidden
     overflow-y: scroll
     scroll-snap-type: y proximity
+    scroll-behavior: smooth
 
 .scroll-snap
     scroll-snap-align: start
@@ -69,7 +71,6 @@ $mobile-limit: 500px
                 width: 100%
                 height: 100%
                 animation: bg-spin 30s linear infinite
-                overflow: hidden
 
         .circle
             width: 25vw
@@ -124,6 +125,7 @@ $mobile-limit: 500px
 
     @media screen and ( max-width: $mobile-limit )
         flex-flow: column nowrap
+        gap: 3em
 
     .flex-padding
         flex-grow: 3
@@ -150,10 +152,10 @@ $mobile-limit: 500px
             color: inherit
             text-decoration: none
 
+            /* Wavy underlines */
             $underline-size: 6px
-            
+            // $light-accent is explicitly embeded in the string because of URL escapes
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg preserveAspectRatio='xMinYMin meet' id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift 2s linear infinite;}@keyframes shift {from {transform:translateX(0); stroke-dashoffset:0;}to {transform:translateX(-20px); stroke-dashoffset:-14;}}%3C/style%3E%3Cpath fill='none' stroke='%23aeaeae' stroke-dasharray='5,2' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
-            //background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
             background-position: 0 1.1em
             background-size: auto $underline-size
             background-repeat: repeat-x
@@ -169,12 +171,24 @@ $mobile-limit: 500px
         @media screen and ( max-width: $mobile-limit )
             height: 30vh
         
-        .circle
+        .back-circle
+            position: absolute
+            bottom: 10%
+            right: 15%
+            transform: translate(50%, 50%)
+
+            width: 25%
+            height: 25%
+            
+            background-color: $background
+            border-radius: 50%
+            z-index: 1
+
+
+        .dash-circle
             position: absolute
             top: 50%
             left: 50%
-            width: 110%
-            height: 110%
 
             @keyframes circle-spin
                 0%
@@ -182,9 +196,61 @@ $mobile-limit: 500px
                 100%
                     transform: translate(-50%, -50%) rotate(360deg)
 
-            animation: circle-spin 120s linear infinite
+            animation: circle-spin 240s linear infinite
 
-        .class
+            width: 95%
+            height: 95%
+            @media screen and ( max-width: $mobile-limit )
+                width: 115%
+                height: 115%
+            
+            z-index: 2
+                
+            // SVG Properties
+            stroke: $background
+            stroke-dasharray: 2,120%
+            stroke-width: 4
+            @media screen and ( max-width: $mobile-limit )
+                stroke: $light-accent
+                stroke-dasharray: 2,60%
+                stroke-width: 2
+
+
+        .image
             width: 100%
             height: 100%
             border-radius: 50%
+
+#physics,#art,#programming
+    .container
+        position: relative
+
+        width: 100%
+        max-width: 162vh
+        margin: 0 auto
+
+        box-sizing: border-box
+        padding-top: 2em
+        padding-left: 10vh        
+        padding-right: 10vh   
+
+        .title
+            font-size: calc(16px + 3vw)
+
+
+#physics     
+    .title
+        font-family: 'DM Serif Display', serif
+        font-style: italic
+
+#art
+    .title
+        float: right
+        font-family: 'DM Serif Display', serif
+        font-style: normal
+
+#programming
+    .title
+        text-align: center
+        font-family: 'DM Mono', monospace
+        font-weight: 500
