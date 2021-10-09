@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@500&family=Asset&display=swap')
 
 $background: #fefefe
 $black: #0e0e0e
@@ -198,8 +198,8 @@ $mobile-limit: 500px
 
             animation: circle-spin 240s linear infinite
 
-            width: 95%
-            height: 95%
+            width: 90%
+            height: 90%
             @media screen and ( max-width: $mobile-limit )
                 width: 115%
                 height: 115%
@@ -254,3 +254,59 @@ $mobile-limit: 500px
         text-align: center
         font-family: 'DM Mono', monospace
         font-weight: 500
+
+#social
+    $social-padding: 2vw
+
+    box-sizing: border-box
+    padding-top: $social-padding
+    padding-bottom: $social-padding
+    width: 80vw
+    margin: 0 auto
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-around
+    gap: 2em
+    max-height: calc(100vh - 2*$social-padding)
+
+    a
+        color: inherit
+        text-decoration: none
+
+    .column
+        flex-shrink: 10
+
+        display: inline-flex
+        flex-flow: column nowrap
+        font-family: 'Asset', cursive
+        font-weight: 400
+        font-size: 4vw
+    
+    #email
+        justify-content: flex-start
+        
+    #github
+        justify-content: flex-end
+    
+    #games
+        justify-content: center
+    
+    @media screen and ( max-width: $mobile-limit )
+        width: 100%
+        
+        flex-flow: column wrap
+        align-items: center
+        justify-content: center
+
+        .column
+            font-size: 10vw
+            display: block
+        
+        $duplicate-spacing: 2vh
+
+        .original
+            margin-bottom: -$duplicate-spacing
+
+        .duplicate
+            line-height: $duplicate-spacing
