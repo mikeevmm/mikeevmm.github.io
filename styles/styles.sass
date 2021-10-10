@@ -1,8 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@500&family=Asset&display=swap')
+@function strip-unit($value)
+  @return $value / ($value * 0 + 1)
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size)
+  $u1: unit($min-vw)
+  $u2: unit($max-vw)
+  $u3: unit($min-font-size)
+  $u4: unit($max-font-size)
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 
+    & 
+      font-size: $min-font-size
+      @media screen and (min-width: $min-vw) 
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))
+      @media screen and (min-width: $max-vw) 
+        font-size: $max-font-size
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@500&family=Asset&display=swap')
 
 $background: #fefefe
+$off-white: #fafafa
 $black: #0e0e0e
+$text-black: #222222
 $light-accent: #aeaeae
+$accent-tone-1: #e4007d
+$accent-tone-2: #fa980c
 
 $mobile-limit: 500px
 
@@ -18,6 +39,11 @@ $mobile-limit: 500px
 
 .scroll-snap
     scroll-snap-align: start
+
+// Elements for which scroll snap should only apply on desktop
+.scroll-snap-desktop
+    @media screen and ( min-width: $mobile-limit )
+        scroll-snap-align: start
 
 .screen
     width: 100%
@@ -89,7 +115,7 @@ $mobile-limit: 500px
             font-family: 'Montserrat', sans-serif
             font-weight: 900
             font-size: 5vw
-            color: #161616
+            color: $black
             transform: translateX(.1ex)
 
             z-index: 1
@@ -110,11 +136,9 @@ $mobile-limit: 500px
         
         animation: point 1s ease-out infinite
 
+        mix-blend-mode: difference
         path
             fill: $background
-
-            @media screen and ( max-width: $mobile-limit )
-                fill: $black
 
 #bio
     display: flex
@@ -161,7 +185,10 @@ $mobile-limit: 500px
             background-repeat: repeat-x
             padding-bottom: $underline-size
 
-        //a:hover
+        // Only change links' color on desktop
+        @media screen and ( min-width: $mobile-limit )    
+            a:hover
+                color: $light-accent
     
     .me
         position: relative
@@ -236,12 +263,60 @@ $mobile-limit: 500px
 
         .title
             font-size: calc(16px + 3vw)
+            padding-bottom: .5em
 
 
 #physics     
     .title
         font-family: 'DM Serif Display', serif
         font-style: italic
+
+    p
+        font-family: 'Montserrat', sans-serif
+        font-weight: 200
+        @include fluid-type(320px, 1200px, 16px, 32px)
+        margin-bottom: 1em
+    
+    .publications
+        background-color: $black
+        background-clip: padding-box
+        min-height: 60vh
+        padding-top: 2em
+        padding-bottom: 2em
+
+        h2
+            font-family: 'Asset', cursive
+            color: $background
+            @include fluid-type(320px, 1200px, 16px, 24px)
+
+            margin-bottom: 1em
+
+            margin-left: 2em
+            text-align: left
+
+            @media screen and ( max-width: $mobile-limit )
+                margin-left: 0
+                text-align: center
+        
+        ul
+            padding: 2em
+            padding-top: 0
+            
+            a
+                color: inherit
+                text-decoration: none
+
+            li
+                margin-bottom: 1em
+                font-family: 'DM Serif Display', serif
+
+                .name
+                    color: $off-white
+                    font-size: calc(16px + .5vw)
+                
+                .description
+                    color: $accent-tone-1
+                    font-size: calc(12px + .5vw)
 
 #art
     .title
@@ -261,12 +336,13 @@ $mobile-limit: 500px
     box-sizing: border-box
     padding-top: $social-padding
     padding-bottom: $social-padding
-    width: 80vw
+    padding-left: 10vw
+    padding-right: 10vw
     margin: 0 auto
 
     display: flex
     flex-flow: row nowrap
-    justify-content: space-around
+    justify-content: center
     gap: 2em
     max-height: calc(100vh - 2*$social-padding)
 
@@ -279,18 +355,21 @@ $mobile-limit: 500px
 
         display: inline-flex
         flex-flow: column nowrap
-        font-family: 'Asset', cursive
+        justify-content: center
+        font-family: 'Montserrat', sans-serif
         font-weight: 400
-        font-size: 4vw
+        font-size: 3vw
     
     #email
-        justify-content: flex-start
-        
+        margin-bottom: 2em
+
     #github
-        justify-content: flex-end
+        margin-top: 3em
     
-    #games
-        justify-content: center
+    $duplicate-spacing: 2.5vh
+
+    .original, .duplicate
+        line-height: $duplicate-spacing
     
     @media screen and ( max-width: $mobile-limit )
         width: 100%
@@ -303,10 +382,6 @@ $mobile-limit: 500px
             font-size: 10vw
             display: block
         
-        $duplicate-spacing: 2vh
-
-        .original
-            margin-bottom: -$duplicate-spacing
-
-        .duplicate
-            line-height: $duplicate-spacing
+        #email,#github,#games
+            margin-bottom: 0
+            margin-top: 0
