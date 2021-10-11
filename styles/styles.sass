@@ -249,6 +249,8 @@ $mobile-limit: 500px
             height: 100%
             border-radius: 50%
 
+$container-padding: 10vh
+
 #physics,#art,#programming
     .container
         position: relative
@@ -261,8 +263,8 @@ $mobile-limit: 500px
 
         box-sizing: border-box
         padding-top: 2em
-        padding-left: 10vh        
-        padding-right: 10vh   
+        padding-left: $container-padding        
+        padding-right: $container-padding   
 
         .title
             font-size: calc(16px + 3vw)
@@ -288,6 +290,8 @@ $mobile-limit: 500px
     
     .content
         flex-grow: 100
+        flex-shrink: 100
+
         display: flex
         flex-flow: column nowrap
 
@@ -305,7 +309,7 @@ $mobile-limit: 500px
             & h2
                 font-family: 'Asset', cursive
                 color: $background
-                @include fluid-type(320px, 1200px, 16px, 24px)
+                @include fluid-type(320px, 1200px, 12px, 24px)
 
                 margin-bottom: 1em
 
@@ -317,6 +321,13 @@ $mobile-limit: 500px
                     text-align: center
             
             ul
+                flex-grow: 10
+
+                overflow-x: clip
+                overflow-y: scroll
+                scroll-snap-type: y proximity
+                scroll-behavior: smooth
+
                 padding: 2em
                 padding-top: 0
                 
@@ -325,6 +336,9 @@ $mobile-limit: 500px
                     text-decoration: none
 
                 li
+                    min-height: 20%
+                    scroll-snap-align: start
+                    
                     margin-bottom: 1em
                     font-family: 'DM Serif Display', serif
 
@@ -337,8 +351,28 @@ $mobile-limit: 500px
                         font-size: calc(12px + .5vw)
 
 #art
+    /* We want a child element to be full-width, so we override the .container
+        properties to make it full-width and instead instert the padding into
+        the .title element */
+
+    .container
+        padding-left: 0
+        padding-right: 0
+        max-width: none
+    
     .title
-        float: right
+        width: 100%
+        max-width: 162vh
+        margin: 0 auto
+        box-sizing: border-box
+        padding-left: $container-padding
+        padding-right: $container-padding
+    
+        text-align: right
+
+    /* --- */
+
+    .title
         font-family: 'DM Serif Display', serif
         font-style: normal
 

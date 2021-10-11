@@ -384,6 +384,8 @@
   -webkit-box-flex: 100;
       -ms-flex-positive: 100;
           flex-grow: 100;
+  -ms-flex-negative: 100;
+      flex-shrink: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,12 +421,12 @@
 }
 
 #physics .content .publications h2 {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 @media screen and (min-width: 320px) {
   #physics .content .publications h2 {
-    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+    font-size: calc(12px + 12 * ((100vw - 320px) / 880));
   }
 }
 
@@ -442,6 +444,14 @@
 }
 
 #physics .content .publications ul {
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+  overflow-x: clip;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
   padding: 2em;
   padding-top: 0;
 }
@@ -452,6 +462,8 @@
 }
 
 #physics .content .publications ul li {
+  min-height: 20%;
+  scroll-snap-align: start;
   margin-bottom: 1em;
   font-family: 'DM Serif Display', serif;
 }
@@ -466,8 +478,31 @@
   font-size: calc(12px + .5vw);
 }
 
+#art {
+  /* We want a child element to be full-width, so we override the .container
+        properties to make it full-width and instead instert the padding into
+        the .title element */
+  /* --- */
+}
+
+#art .container {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+}
+
 #art .title {
-  float: right;
+  width: 100%;
+  max-width: 162vh;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 10vh;
+  padding-right: 10vh;
+  text-align: right;
+}
+
+#art .title {
   font-family: 'DM Serif Display', serif;
   font-style: normal;
 }
