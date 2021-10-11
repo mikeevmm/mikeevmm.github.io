@@ -32,7 +32,7 @@
   overflow: hidden;
 }
 
-#splash .container {
+#splash > .container {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -51,7 +51,7 @@
           align-items: center;
 }
 
-#splash .container .bg-base {
+#splash > .container .bg-base {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,7 +61,7 @@
           transform: translate(-50%, -50%);
 }
 
-#splash .container .bg-container {
+#splash > .container .bg-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -73,13 +73,13 @@
 }
 
 @media screen and (max-width: 500px) {
-  #splash .container .bg-container {
+  #splash > .container .bg-container {
     width: 100%;
     height: 100%;
   }
 }
 
-#splash .container .bg-container .bg {
+#splash > .container .bg-container .bg {
   width: 100%;
   height: 100%;
   -webkit-animation: bg-spin 30s linear infinite;
@@ -108,7 +108,7 @@
   }
 }
 
-#splash .container .circle {
+#splash > .container .circle {
   width: 25vw;
   height: 25vw;
   background-color: #fefefe;
@@ -121,7 +121,7 @@
   z-index: 0;
 }
 
-#splash .container h1 {
+#splash > .container h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 5vw;
@@ -317,7 +317,7 @@
   border-radius: 50%;
 }
 
-#physics .container, #art .container, #programming .container {
+#physics > .container, #art > .container, #programming > .container {
   position: relative;
   width: 100%;
   max-width: 162vh;
@@ -329,7 +329,7 @@
   padding-right: 10vh;
 }
 
-#physics .container .title, #art .container .title, #programming .container .title {
+#physics > .container .title, #art > .container .title, #programming > .container .title {
   font-size: calc(16px + 3vw);
   padding-bottom: .5em;
 }
@@ -362,9 +362,16 @@
 }
 
 #physics .publications {
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   background-color: #0e0e0e;
   background-clip: padding-box;
-  min-height: 60vh;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -378,12 +385,12 @@
 }
 
 #physics .publications h2 {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 @media screen and (min-width: 320px) {
   #physics .publications h2 {
-    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+    font-size: calc(12px + 12 * ((100vw - 320px) / 880));
   }
 }
 
@@ -401,6 +408,14 @@
 }
 
 #physics .publications ul {
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+  overflow-x: clip;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
   padding: 2em;
   padding-top: 0;
 }
@@ -411,6 +426,8 @@
 }
 
 #physics .publications ul li {
+  min-height: 20%;
+  scroll-snap-align: start;
   margin-bottom: 1em;
   font-family: 'DM Serif Display', serif;
 }
@@ -425,10 +442,44 @@
   font-size: calc(12px + .5vw);
 }
 
+#art {
+  /* Override general .container settings to make it full-width */
+  /* */
+}
+
+#art > .container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 #art .title {
-  float: right;
+  width: 162vh;
+  margin: 0 auto;
+  text-align: right;
+}
+
+#art .title {
   font-family: 'DM Serif Display', serif;
   font-style: normal;
+}
+
+#art > .container {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#art > .container > .subcontainer {
+  height: 100%;
+  background-color: #e4007d;
 }
 
 #programming .title {
