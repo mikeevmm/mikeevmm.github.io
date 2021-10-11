@@ -47,6 +47,7 @@ $mobile-limit: 500px
 
 .screen
     width: 100%
+    height: 1px // @see stackoverflow:8468066
     min-height: 100vh
 
 #splash
@@ -55,7 +56,7 @@ $mobile-limit: 500px
 
     overflow: hidden
 
-    > .container
+    .container
         width: 100%
         height: 100vh
 
@@ -249,11 +250,13 @@ $mobile-limit: 500px
             border-radius: 50%
 
 #physics,#art,#programming
-    > .container
+    .container
         position: relative
 
         width: 100%
+        height: 1px // @see stackoverflow:8468066
         max-width: 162vh
+        min-height: 100%
         margin: 0 auto
 
         box-sizing: border-box
@@ -265,101 +268,79 @@ $mobile-limit: 500px
             font-size: calc(16px + 3vw)
             padding-bottom: .5em
 
-#physics     
+
+#physics
+    .container
+        display: flex
+        flex-flow: column nowrap
+
     .title
         font-family: 'DM Serif Display', serif
         font-style: italic
+        flex-grow: 0
 
-    p
+    & p
         font-family: 'Montserrat', sans-serif
         font-weight: 200
         @include fluid-type(320px, 1200px, 16px, 32px)
         margin-bottom: 1em
+        flex-grow: 0
     
-    .publications
-        height: 60vh
-
+    .content
+        flex-grow: 100
         display: flex
         flex-flow: column nowrap
 
-        background-color: $black
-        background-clip: padding-box
+        & p
+            flex-grow: 0
 
-        padding-top: 2em
-        padding-bottom: 2em
+        .publications
+            flex-grow: 100
+            background-color: $black
+            background-clip: padding-box
+            min-height: 60vh
+            padding-top: 2em
+            padding-bottom: 2em
 
-        h2
-            font-family: 'Asset', cursive
-            color: $background
-            @include fluid-type(320px, 1200px, 12px, 24px)
+            & h2
+                font-family: 'Asset', cursive
+                color: $background
+                @include fluid-type(320px, 1200px, 16px, 24px)
 
-            margin-bottom: 1em
-
-            margin-left: 2em
-            text-align: left
-
-            @media screen and ( max-width: $mobile-limit )
-                margin-left: 0
-                text-align: center
-        
-        ul
-            flex-grow: 10
-
-            overflow-x: clip
-            overflow-y: scroll
-            scroll-snap-type: y proximity
-            scroll-behavior: smooth
-
-            padding: 2em
-            padding-top: 0
-            
-            a
-                color: inherit
-                text-decoration: none
-
-            li
-                min-height: 20%
-                scroll-snap-align: start
                 margin-bottom: 1em
-                font-family: 'DM Serif Display', serif
 
-                .name
-                    color: $off-white
-                    font-size: calc(16px + .5vw)
+                margin-left: 2em
+                text-align: left
+
+                @media screen and ( max-width: $mobile-limit )
+                    margin-left: 0
+                    text-align: center
+            
+            ul
+                padding: 2em
+                padding-top: 0
                 
-                .description
-                    color: $accent-tone-1
-                    font-size: calc(12px + .5vw)
+                a
+                    color: inherit
+                    text-decoration: none
+
+                li
+                    margin-bottom: 1em
+                    font-family: 'DM Serif Display', serif
+
+                    .name
+                        color: $off-white
+                        font-size: calc(16px + .5vw)
+                    
+                    .description
+                        color: $accent-tone-1
+                        font-size: calc(12px + .5vw)
 
 #art
-    /* Override general .container settings to make it full-width */
-    > .container
-        max-width: none
-        padding-left: 0
-        padding-right: 0
-        margin-left: 0
-        margin-right: 0
-    
-    // This implies re-adding the padding to the .title
     .title
-        width: 162vh
-        margin: 0 auto
-        text-align: right
-
-    /* */
-
-    .title
+        float: right
         font-family: 'DM Serif Display', serif
         font-style: normal
-    
-    > .container 
-        min-height: 100%
-        display: flex
-        flex-flow: column nowrap
-
-        > .subcontainer
-            height: 100%
-            background-color: $accent-tone-1
 
 #programming
     .title
