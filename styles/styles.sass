@@ -47,6 +47,7 @@ $mobile-limit: 500px
 
 .screen
     width: 100%
+    height: 1px // @see stackoverflow:8468066
     min-height: 100vh
 
 #splash
@@ -253,7 +254,9 @@ $mobile-limit: 500px
         position: relative
 
         width: 100%
+        height: 1px // @see stackoverflow:8468066
         max-width: 162vh
+        min-height: 100%
         margin: 0 auto
 
         box-sizing: border-box
@@ -266,57 +269,72 @@ $mobile-limit: 500px
             padding-bottom: .5em
 
 
-#physics     
+#physics
+    .container
+        display: flex
+        flex-flow: column nowrap
+
     .title
         font-family: 'DM Serif Display', serif
         font-style: italic
+        flex-grow: 0
 
-    p
+    & p
         font-family: 'Montserrat', sans-serif
         font-weight: 200
         @include fluid-type(320px, 1200px, 16px, 32px)
         margin-bottom: 1em
+        flex-grow: 0
     
-    .publications
-        background-color: $black
-        background-clip: padding-box
-        min-height: 60vh
-        padding-top: 2em
-        padding-bottom: 2em
+    .content
+        flex-grow: 100
+        display: flex
+        flex-flow: column nowrap
 
-        h2
-            font-family: 'Asset', cursive
-            color: $background
-            @include fluid-type(320px, 1200px, 16px, 24px)
+        & p
+            flex-grow: 0
 
-            margin-bottom: 1em
+        .publications
+            flex-grow: 100
+            background-color: $black
+            background-clip: padding-box
+            min-height: 60vh
+            padding-top: 2em
+            padding-bottom: 2em
 
-            margin-left: 2em
-            text-align: left
+            & h2
+                font-family: 'Asset', cursive
+                color: $background
+                @include fluid-type(320px, 1200px, 16px, 24px)
 
-            @media screen and ( max-width: $mobile-limit )
-                margin-left: 0
-                text-align: center
-        
-        ul
-            padding: 2em
-            padding-top: 0
-            
-            a
-                color: inherit
-                text-decoration: none
-
-            li
                 margin-bottom: 1em
-                font-family: 'DM Serif Display', serif
 
-                .name
-                    color: $off-white
-                    font-size: calc(16px + .5vw)
+                margin-left: 2em
+                text-align: left
+
+                @media screen and ( max-width: $mobile-limit )
+                    margin-left: 0
+                    text-align: center
+            
+            ul
+                padding: 2em
+                padding-top: 0
                 
-                .description
-                    color: $accent-tone-1
-                    font-size: calc(12px + .5vw)
+                a
+                    color: inherit
+                    text-decoration: none
+
+                li
+                    margin-bottom: 1em
+                    font-family: 'DM Serif Display', serif
+
+                    .name
+                        color: $off-white
+                        font-size: calc(16px + .5vw)
+                    
+                    .description
+                        color: $accent-tone-1
+                        font-size: calc(12px + .5vw)
 
 #art
     .title
