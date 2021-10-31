@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   -ms-scroll-snap-type: y proximity;
       scroll-snap-type: y proximity;
   scroll-behavior: smooth;
@@ -337,6 +337,10 @@
   padding-bottom: .5em;
 }
 
+#physics {
+  position: relative;
+}
+
 #physics .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,27 +359,39 @@
           flex-grow: 0;
 }
 
-#physics p {
+#physics .more {
+  position: absolute;
+  right: 10px;
+  top: 10vh;
+}
+
+#physics .more img {
+  height: 2em;
+  -webkit-transform: translate(-100%, -40%);
+          transform: translate(-100%, -40%);
+}
+
+#physics .leading-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
-  margin-bottom: 1em;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
+  margin-bottom: 1em;
 }
 
-#physics p {
+#physics .leading-text {
   font-size: 16px;
 }
 
 @media screen and (min-width: 320px) {
-  #physics p {
+  #physics .leading-text {
     font-size: calc(16px + 16 * ((100vw - 320px) / 880));
   }
 }
 
 @media screen and (min-width: 1200px) {
-  #physics p {
+  #physics .leading-text {
     font-size: 32px;
   }
 }
@@ -461,7 +477,7 @@
       flex-shrink: 100;
   min-height: 0;
   overflow-x: clip;
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
   padding: 2em;
   padding-top: 0;
@@ -540,6 +556,14 @@
   -webkit-box-flex: 100;
       -ms-flex-positive: 100;
           flex-grow: 100;
+  overflow-x: auto;
+}
+
+#art .subcontainer .item {
+  width: 80%;
+  height: 100%;
+  margin-right: 20%;
+  background: #8C8;
 }
 
 #programming .title {
