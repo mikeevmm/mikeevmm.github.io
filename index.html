@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,16 +38,14 @@
                     </p>
                     <div class="publications">
                         <ul>
+                            {% for publication in site.data.publications %}
                             <li>
-                                <a href=" http://hdl.handle.net/10316/92475">
-                                    <span class="name">Molecular Geometry
-                                        Calculations Using a
-                                        Novel Quantum Variational Approach</span>
-                                    <span class="description">(Master
-                                        Thesis on using limited quantum
-                                        computers to calculate bond lengths)</span>
+                                <a href="{{ publication.link }}">
+                                    <span class="name">{{publication.title}}</span>
+                                    <span class="description">({{publication.description}})</span>
                                 </a>
                             </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>

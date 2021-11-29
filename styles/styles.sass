@@ -1,3 +1,7 @@
+---
+---
+// Above "front-matter" is needed for Jekyll to process this file correctly.
+
 @function strip-unit($value)
   @return $value / ($value * 0 + 1)
 
@@ -176,7 +180,7 @@ $container-padding: 10vh
         padding-right: $container-padding   
 
         .title
-            @include fluid-type(320px, 1200px, 32px, 38px)
+            @include fluid-type(320px, 1200px, 32px, 56px)
             padding-bottom: .5em
 
 
@@ -257,7 +261,7 @@ $container-padding: 10vh
                     text-decoration: none
 
                 li:not(:last-child)
-                    margin-bottom: 4em
+                    margin-bottom: 1em
 
                 li
                     font-family: 'DM Serif Text', serif
