@@ -34,7 +34,8 @@
                 <h1 class="title">Physics</h1>
                 <div class="content">
                     <p class="leading-text">I have a Master's in Physics, and am pursuing a PhD, focused on Quantum
-                        Computing. <a href="physics" class="more">(See more)</a>
+                        Computing.
+                        <!--<a href="physics" class="more">(See more)</a> Nothing to add yet.-->
                     </p>
                     <div class="publications">
                         <ul>
@@ -55,7 +56,14 @@
             <div class="container">
                 <h1 class="title">Art</h1>
                 <div class="subcontainer">
-                    <div class="most-recent"></div>
+                    {% assign art = site.data.art | first %}
+                    <div class="description">
+                        <div class="name">{{art.name}}</div>
+                        <div class="blurb">{{art.blurb}}</div>
+                    </div>
+                    <div class="card" style="aspect-ratio: {{art.image.ratio}};">
+                        <img src="{{art.image.path}}" alt="{{art.image.alt}}">
+                    </div>
                 </div>
             </div>
         </div>

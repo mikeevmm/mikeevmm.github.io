@@ -1,0 +1,8 @@
+- name: Zen Garden
+  blurb: >
+    Zen Garden was my entry for the Processing Community Day (PCD) Coimbra 2020 edition, with the theme "25."
+    The piece was selected for exhibition (alongside 24 other artists).
+  image:
+    path: "assets/pcd2020.jpg"
+    alt: "Entry for the Processing Community Day 2020, in Coimbra."
+    ratio: 7/9
