@@ -15,7 +15,7 @@
       @media screen and (min-width: $max-vw) 
         font-size: $max-font-size
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@500&family=Asset&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:wght@400&family=DM+Mono:wght@500&family=Asset&display=swap')
 
 $background: #fefefe
 $off-white: #fafafa
@@ -176,7 +176,7 @@ $container-padding: 10vh
         padding-right: $container-padding   
 
         .title
-            font-size: calc(16px + 3vw)
+            @include fluid-type(320px, 1200px, 32px, 38px)
             padding-bottom: .5em
 
 
@@ -187,27 +187,33 @@ $container-padding: 10vh
         display: flex
         flex-flow: column nowrap
 
+        @media screen and ( max-width: $mobile-limit )
+            padding-left: 0
+            padding-right: 0
+
     .title
         font-family: 'DM Serif Display', serif
         font-style: italic
         flex-grow: 0
-    
-    .more
-        position: absolute
-        right: 10px
-        top: $container-padding
-        
-        img
-            height: 2em
-            transform: translate(-100%, -40%)
 
+        @media screen and ( max-width: $mobile-limit )
+            padding-left: 10px
+            padding-right: 10px
 
     .leading-text
         font-family: 'Montserrat', sans-serif
         font-weight: 200
-        @include fluid-type(320px, 1200px, 16px, 32px)
+        @include fluid-type(320px, 1200px, 18px, 32px)
         flex-grow: 0
         margin-bottom: 1em
+
+        @media screen and ( max-width: $mobile-limit )
+            padding-left: 10px
+            padding-right: 10px
+    
+        @media screen and ( min-width: $mobile-limit )
+            & .more
+                font-size: .5em
         
     .content
         flex-grow: 100
@@ -234,20 +240,6 @@ $container-padding: 10vh
             padding-top: 2em
             padding-bottom: 2em
 
-            & h2
-                font-family: 'Asset', cursive
-                color: $background
-                @include fluid-type(320px, 1200px, 12px, 24px)
-
-                margin-bottom: 1em
-
-                margin-left: 2em
-                text-align: left
-
-                @media screen and ( max-width: $mobile-limit )
-                    margin-left: 0
-                    text-align: center
-            
             ul
                 flex-grow: 100
                 flex-shrink: 100
@@ -268,15 +260,15 @@ $container-padding: 10vh
                     margin-bottom: 4em
 
                 li
-                    font-family: 'DM Serif Display', serif
+                    font-family: 'DM Serif Text', serif
+                    @include fluid-type(320px, 1200px, 20px, 24px)
 
                     .name
                         color: $off-white
-                        font-size: calc(16px + .5vw)
                     
                     .description
                         color: $accent-tone-1
-                        font-size: calc(12px + .5vw)
+                        font-size: .8em
 
 #art
     /* We want a child element to be full-width, so we override the .container
