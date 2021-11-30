@@ -26,7 +26,7 @@
                     <circle style="fill:none;stroke-linecap:square;stroke-miterlimit:4;stroke-dashoffset:0"
                         id="path1631" cx="5" cy="5" r="4.8" vector-effect="non-scaling-stroke" />
                 </svg>
-                <img src="assets/me.jpg" alt="This is me." class="image">
+                <img src="assets/me.jpg" alt="This is me.">
             </div>
         </div>
         <div class="screen scroll-snap" id="physics">
@@ -47,6 +47,7 @@
                                 </a>
                             </li>
                             {% endfor %}
+                            <li><span class="description">(That's all for now)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -55,15 +56,16 @@
         <div class="screen scroll-snap-desktop" id="art">
             <div class="container">
                 <h1 class="title">Art</h1>
+                <p class="prompt">(Tap for more)</p>
                 <div class="subcontainer">
                     {% assign art = site.data.art | first %}
                     <div class="description">
-                        <div class="name">{{art.name}}</div>
-                        <div class="blurb">{{art.blurb}}</div>
+                        <h3 class="name">{{art.name}}</h3>
+                        <p class="blurb">{{art.blurb}}<br><a href="pages/art.html">(Click for more)</p></p>
                     </div>
-                    <div class="card" style="aspect-ratio: {{art.image.ratio}};">
+                    <a href="pages/art.html" class="card" style="aspect-ratio: {{art.image.ratio}};">
                         <img src="{{art.image.path}}" alt="{{art.image.alt}}">
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
