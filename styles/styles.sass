@@ -54,6 +54,16 @@ $mobile-limit: 580px
     height: 1px // @see stackoverflow:8468066
     min-height: 100vh
 
+.wavy-underline
+    $underline-size: 6px
+    // $light-accent is explicitly embeded in the string because of URL escapes
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg preserveAspectRatio='xMinYMin meet' id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift 2s linear infinite;}@keyframes shift {from {transform:translateX(0); stroke-dashoffset:0;}to {transform:translateX(-20px); stroke-dashoffset:-14;}}%3C/style%3E%3Cpath fill='none' stroke='%23aeaeae' stroke-dasharray='5,2' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
+    background-position: 0 1.1em
+    background-size: auto $underline-size
+    background-repeat: repeat-x
+    padding-bottom: $underline-size
+
+
 #bio
     display: flex
     flex-flow: row nowrap
@@ -89,15 +99,6 @@ $mobile-limit: 580px
         a
             color: inherit
             text-decoration: none
-
-            /* Wavy underlines */
-            $underline-size: 6px
-            // $light-accent is explicitly embeded in the string because of URL escapes
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg preserveAspectRatio='xMinYMin meet' id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift 2s linear infinite;}@keyframes shift {from {transform:translateX(0); stroke-dashoffset:0;}to {transform:translateX(-20px); stroke-dashoffset:-14;}}%3C/style%3E%3Cpath fill='none' stroke='%23aeaeae' stroke-dasharray='5,2' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
-            background-position: 0 1.1em
-            background-size: auto $underline-size
-            background-repeat: repeat-x
-            padding-bottom: $underline-size
 
         // Only change links' color on desktop
         @media screen and ( min-width: $mobile-limit )    
@@ -180,9 +181,18 @@ $container-padding: 10vh
         padding-left: $container-padding        
         padding-right: $container-padding   
 
+        @media screen and ( max-width: $mobile-limit )
+            padding-left: 0
+            padding-right: 0
+
         .title
             @include fluid-type(320px, 1200px, 32px, 56px)
             padding-bottom: .5em
+
+            @media screen and ( max-width: $mobile-limit )
+                padding-left: 10px
+                padding-right: 10px
+
 
 
 #physics
@@ -192,18 +202,10 @@ $container-padding: 10vh
         display: flex
         flex-flow: column nowrap
 
-        @media screen and ( max-width: $mobile-limit )
-            padding-left: 0
-            padding-right: 0
-
     .title
         font-family: 'DM Serif Display', serif
         font-style: italic
         flex-grow: 0
-
-        @media screen and ( max-width: $mobile-limit )
-            padding-left: 10px
-            padding-right: 10px
 
     .leading-text
         font-family: 'Montserrat', sans-serif
@@ -276,21 +278,20 @@ $container-padding: 10vh
         properties to make it full-width and instead instert the padding into
         the .title element */
 
-    .container
-        padding-left: 0
-        padding-right: 0
-        max-width: none
-    
-    .title
-        width: 100%
-        max-width: 162vh
-        margin: 0 auto
-        box-sizing: border-box
-        padding-left: $container-padding
-        padding-right: $container-padding
-    
-        text-align: right
-
+    //.container
+    //    padding-left: 0
+    //    padding-right: 0
+    //    max-width: none
+    //
+    //.title
+    //    width: 100%
+    //    max-width: 162vh
+    //    margin: 0 auto
+    //    box-sizing: border-box
+    //    padding-left: $container-padding
+    //    padding-right: $container-padding
+    //
+    //    text-align: right
     /* --- */
 
     .container
@@ -300,6 +301,9 @@ $container-padding: 10vh
     .title
         font-family: 'DM Serif Display', serif
         font-style: normal
+        text-align: right
+
+        padding-right: 1ex
 
         flex-grow: 0
         flex-shrink: 0
@@ -355,10 +359,12 @@ $container-padding: 10vh
             align-items: start
         
         .card
-            flex-shrink: 1
+            flex-shrink: 100
             box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47)
             
-            height: calc(100% - 2*5px)
+            width: auto
+            height: calc(100% - 10px)
+            object-fit: contain
             box-sizing: border-box
             margin: 5px
             padding: 5px
@@ -367,6 +373,7 @@ $container-padding: 10vh
                 width: 100%
                 height: 100%
                 border-radius: 10px
+                object-fit: cover
             
 
 #programming
