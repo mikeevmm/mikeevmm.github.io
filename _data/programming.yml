@@ -1,0 +1,8 @@
+- name: quik
+  blurb: lets you define and quikly jump to bookmarked directories in the shell.
+- name: boyl
+  blurb: is a command-line tool written in Rust to manage template folders.
+- name: sane
+  blurb: is a command runner made simple.
+- name: jfc
+  blurb: is a utility to make reviewing ArXiv papers easier.

@@ -39,15 +39,15 @@
                     </p>
                     <div class="publications">
                         <ul>
-                            {% for publication in site.data.publications %}
+                            {% for publication in site.data.physics %}
                             <li>
                                 <a href="{{ publication.link }}">
-                                    <span class="name">{{publication.title}}</span>
-                                    <span class="description">({{publication.description}})</span>
+                                    <div class="name">{{publication.title}}</div>
+                                    <div class="description">({{publication.description}})</div>
                                 </a>
                             </li>
                             {% endfor %}
-                            <li><span class="description">(That's all for now)</span></li>
+                            <li><span class="description">(That's all for now, but keep scrolling)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +56,6 @@
         <div class="screen scroll-snap-desktop" id="art">
             <div class="container">
                 <h1 class="title">Art</h1>
-                <p class="prompt">(Tap for more)</p>
                 <div class="subcontainer">
                     {% assign art = site.data.art | first %}
                     <div class="description">
@@ -64,7 +63,10 @@
                         <p class="blurb">{{art.blurb}}<br><a href="pages/art.html">(Click for more)</p>
                         </p>
                     </div>
-                    <a href="pages/art.html" class="card" style="aspect-ratio: {{art.image.ratio}};">
+                    <a href="pages/art.html"
+                        class="card {% if art.image.ratio <= 1 %} vertical{% else %} horizontal{% endif %}"
+                        style="aspect-ratio: {{art.image.ratio}};">
+                        <p class="prompt">(Tap for more)</p>
                         <img src="{{art.image.path}}" alt="{{art.image.alt}}">
                     </a>
                 </div>
@@ -73,6 +75,16 @@
         <div class="screen scroll-snap-desktop" id="programming">
             <div class="container">
                 <h1 class="title">Programming</h1>
+                <div class="subcontainer">
+                    {% for item in site.data.programming limit: 5 %}
+                    <a href="pages/programming.html/#{{item.name | slugify}}"
+                        class="card{% if forloop.index > 3 %} extra{% endif %}">
+                        <div class="name">{{item.name}}</div>
+                        <div class="blurb">{{item.blurb}}</div>
+                    </a>
+                    {% endfor %}
+                    <a href="pages/programming.html" class="prompt">more →</a>
+                </div>
             </div>
         </div>
         <div class="screen scroll-snap" id="social">
