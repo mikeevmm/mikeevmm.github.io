@@ -1,0 +1,42 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#Art</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/art.css">
+</head>
+
+<body>
+    <div id="viewport">
+        <header>
+            <nav><span><a href="/">home</a></span><span>/</span><span>art</span></nav>
+        </header>
+        {% for art in site.data.art %}
+        <div class="item">
+            <div class="description-desktop">
+                <h3 class="name">{{art.name}}</h3>
+                <p class="blurb">{{art.blurb}}</p>
+                </p>
+            </div>
+            <div
+                class="card {% if art.image.ratio <= 1 %}vertical{% else %}horizontal{% endif %}"
+                style="aspect-ratio: {{art.image.ratio}};
+                    {% if art.image.ratio <= 1 %} 
+                        max-width: {{ 90 | times: art.image.ratio }}vh;
+                    {% else %}
+                        max-height: {{ 90 | divided_by: art.image.ratio }}vw;
+                    {% endif %}">
+                <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

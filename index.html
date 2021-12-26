@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi.</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
@@ -67,7 +67,7 @@
                         class="card {% if art.image.ratio <= 1 %} vertical{% else %} horizontal{% endif %}"
                         style="aspect-ratio: {{art.image.ratio}};">
                         <p class="prompt">(Tap for more)</p>
-                        <img src="{{art.image.path}}" alt="{{art.image.alt}}">
+                        <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
                     </a>
                 </div>
             </div>

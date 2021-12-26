@@ -6,3 +6,5 @@
   blurb: is a command runner made simple.
 - name: jfc
   blurb: is a utility to make reviewing ArXiv papers easier.
+- name: eq
+  blurb: is a LaTeX to PNG-in-your-clipboard conversion tool.
