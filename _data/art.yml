@@ -1,7 +1,20 @@
+- name: TAU-800B Super
+  blurb: >
+    A multidisciplinary work involving time-travel, presented for the Processing Community Day Coimbra 2021 edition. Installation presented in the downtown of Coimbra, and corresponding presentation talk alongside other 5 selected artists.
+  description: |
+    As a follow up to the 2020 submission, I decided to collaborate with a friend to create a more ambitious project. Working on the theme of "anachronism", André Duarte and I built a full emulation of a computer that makes use of time travelling to speed up its computation, and presents a (retro-)futuristic interface, while also obeying computing paradigms of the minicomputers of the 70s. To achieve this, we combined web technologies and low-level programming. To fully complement this alternate reality, we created an accompanying user manual in LaTeX, displayed as part of the installation.
+    
+    [I expanded on the details of the piece here.](https://twitter.com/mikeevmm/status/1471163276247638023)
+  image:
+    path: "assets/tau800b.jpg"
+    alt: "Picture of the TAU-800B Super installation, in Coimbra, Portugal."
+    ratio: 0.75
 - name: Zen Garden
   blurb: >
     Zen Garden was my entry for the Processing Community Day (PCD) Coimbra 2020 edition, with the theme "25."
     The piece was selected for exhibition (alongside 24 other artists).
+  description: |
+    The Processing Community Day is a decentralized event proposed by the [Processing](https://processing.org/) community. Therefore, the event is focused on computational art/creativity. For the Coimbra edition of the PCD 2020, the proposed theme was "25", both in celebration of the 25th anniversary of Processing, but also exploring the Portuguese connections to the number, as the (second) Portuguese democratic revolution took place on the 25th of April, 1974. The poster I submitted was constructed using Signed Distance Fields, such that each pixel can be calculated individually. By plotting the iso-lines of the function, one gets the emerging effect of interference between the different sources, reminiscent of the sand-lines in a zen garden.
   image:
     path: "assets/pcd2020.jpg"
     alt: "Entry for the Processing Community Day 2020, in Coimbra."

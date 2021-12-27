@@ -20,21 +20,28 @@
         </header>
         {% for art in site.data.art %}
         <div class="item">
-            <div class="description-desktop">
-                <h3 class="name">{{art.name}}</h3>
-                <p class="blurb">{{art.blurb}}</p>
-                </p>
+            <div class="content">
+                <div class="short-description desktop">
+                    <h3 class="name">{{art.name}}</h3>
+                    <p class="blurb">{{art.blurb}}</p>
+                    </p>
+                </div>
+                <div
+                    class="card {% if art.image.ratio <= 1 %}vertical{% else %}horizontal{% endif %}"
+                    style="aspect-ratio: {{art.image.ratio}};
+                        {% if art.image.ratio <= 1 %} 
+                            max-width: {{ 90 | times: art.image.ratio }}vh;
+                        {% else %}
+                            max-height: {{ 90 | divided_by: art.image.ratio }}vw;
+                        {% endif %}">
+                    <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
+                </div>
             </div>
-            <div
-                class="card {% if art.image.ratio <= 1 %}vertical{% else %}horizontal{% endif %}"
-                style="aspect-ratio: {{art.image.ratio}};
-                    {% if art.image.ratio <= 1 %} 
-                        max-width: {{ 90 | times: art.image.ratio }}vh;
-                    {% else %}
-                        max-height: {{ 90 | divided_by: art.image.ratio }}vw;
-                    {% endif %}">
-                <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
+            <div class="short-description mobile">
+                <h3 id="name">{{art.name}}</h3>
+                <div class="blurb">{{art.blurb}}</div>
             </div>
+            <div class="long-description">{{ art.description | markdownify }}</div>
         </div>
         {% endfor %}
     </div>
