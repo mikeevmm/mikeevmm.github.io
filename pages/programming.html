@@ -1,0 +1,30 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>#Programming</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/styles/reset.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/styles/programming.css'>
+</head>
+<body>
+    <header>
+        <nav><span><a href="/">home</a></span><span>/</span><span>programming</span></nav>
+    </header>
+    <article class="container">
+        {% for prog in site.data.programming %}
+        <a href="{{ prog.link }}" class="item" id="{{ prog.name | slugify }}">
+            <div class="name">{{prog.name}}</div>
+            <div class="blurb">{{prog.blurb | markdownify}}</div>
+            <p>→</p>
+        </a>
+        {% endfor %}
+    </article>
+    <footer>
+        <nav><span><a href="/">home</a></span><span>/</span><span>programming</span></nav>
+    </footer>
+</body>
+</html>

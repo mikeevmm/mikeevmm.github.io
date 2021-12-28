@@ -1,10 +1,15 @@
 - name: quik
-  blurb: lets you define and quikly jump to bookmarked directories in the shell.
+  blurb: lets you define and qui~~c~~kly jump to bookmarked directories in the shell.
+  link: https://github.com/mikeevmm/quik
 - name: boyl
   blurb: is a command-line tool written in Rust to manage template folders.
+  link: https://github.com/mikeevmm/boyl
 - name: sane
   blurb: is a command runner made simple.
+  link: https://github.com/mikeevmm/sane
 - name: jfc
   blurb: is a utility to make reviewing ArXiv papers easier.
+  link: https://github.com/mikeevmm/jfc
 - name: eq
   blurb: is a LaTeX to PNG-in-your-clipboard conversion tool.
+  link: https://github.com/mikeevmm/eq

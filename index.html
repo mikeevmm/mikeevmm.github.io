@@ -77,10 +77,10 @@
                 <h1 class="title">Programming</h1>
                 <div class="subcontainer">
                     {% for item in site.data.programming limit: 5 %}
-                    <a href="pages/programming.html/#{{item.name | slugify}}"
+                    <a href="{{item.link}}"
                         class="card{% if forloop.index > 3 %} extra{% endif %}">
                         <div class="name">{{item.name}}</div>
-                        <div class="blurb">{{item.blurb}}</div>
+                        <div class="blurb">{{item.blurb | markdownify}}</div>
                     </a>
                     {% endfor %}
                     <a href="pages/programming.html" class="prompt">more →</a>

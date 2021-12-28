@@ -14,12 +14,12 @@
 </head>
 
 <body>
+    <header>
+        <nav><span><a href="/">home</a></span><span>/</span><span>art</span></nav>
+    </header>
     <div id="viewport">
-        <header>
-            <nav><span><a href="/">home</a></span><span>/</span><span>art</span></nav>
-        </header>
         {% for art in site.data.art %}
-        <div class="item">
+        <article class="item">
             <div class="content">
                 <div class="short-description desktop">
                     <h3 class="name">{{art.name}}</h3>
@@ -42,8 +42,11 @@
                 <div class="blurb">{{art.blurb}}</div>
             </div>
             <div class="long-description">{{ art.description | markdownify }}</div>
-        </div>
+        </article>
         {% endfor %}
     </div>
+    <footer>
+        <nav><span><a href="/">home</a></span><span>/</span><span>art</span></nav>
+    </footer>
 </body>
 </html>

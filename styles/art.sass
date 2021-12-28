@@ -3,42 +3,17 @@
 // Above "front-matter" is needed for Jekyll to process this file correctly.
 
 @import 'mixins.sass'
-
-@mixin if-compressed
-    @media screen and ( max-width: 2*$mobile-limit )
-        @content
-
-@mixin if-not-compressed
-    @media screen and ( min-width: 2*$mobile-limit )
-        @content
+@import 'headers.sass'
 
 #viewport
     width: 100%
     min-height: 100vh
 
-    header
-        width: 100%
-
-        box-sizing: border-box
-
-        padding: 1em
-        font-family: 'Montserrat', sans-serif
-        
-        nav
-            width: 20%
-
-            display: flex
-            flex-flow: row nowrap
-            justify-content: space-between
-
-            @media screen and ( max-width: $mobile-limit )
-                width: 100%
-                justify-content: space-evenly
-
     .item
-        padding-bottom: 10vh
-        &:not(:first)
+        &:not(:first-child)
             padding-top: 10vh
+        &:not(:last-child)
+            padding-bottom: 10vh
 
         .short-description
             font-family: 'Montserrat', sans-serif
