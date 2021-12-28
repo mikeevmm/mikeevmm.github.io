@@ -38,3 +38,17 @@
     path: "assets/pcd2020.jpg"
     alt: "Entry for the Processing Community Day 2020, in Coimbra."
     ratio: 0.707
+- name: This Website
+  blurb: You are looking at it!
+  description: |
+    This website was fully crafted by hand, with HTML and CSS only. It's hosted on Github
+    Pages, and so uses Jekyll as a static website engine. I made a point not to use
+    Javascript: I'm not necessarily a luddite, but I like my static pages static, and you
+    can get very far with CSS nowadays. This is the second iteration on the design, as the
+    first version was much more "bootstrap"-y. This time, I went for something a little
+    more brutalist, with an eye towards typography. This is more in line with my recent
+    work and interests.
+  image:
+    path: "assets/website.png"
+    alt: "A screenshot of the current webpage."
+    ratio: 2.1047765793528503

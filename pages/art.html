@@ -19,15 +19,20 @@
     </header>
     <div id="viewport">
         {% for art in site.data.art %}
+        {% if art.image.ratio <= 1 %}
+            {% assign orientation = "vertical" %}
+        {% else %}
+            {% assign orientation = "horizontal" %}
+        {% endif %}
         <article class="item">
             <div class="content">
-                <div class="short-description desktop">
+                <div class="short-description {{orientation}} side">
                     <h3 class="name">{{art.name}}</h3>
                     <p class="blurb">{{art.blurb}}</p>
                     </p>
                 </div>
                 <div
-                    class="card {% if art.image.ratio <= 1 %}vertical{% else %}horizontal{% endif %}"
+                    class="card {{orientation}}"
                     style="aspect-ratio: {{art.image.ratio}};
                         {% if art.image.ratio <= 1 %} 
                             max-width: {{ 90 | times: art.image.ratio }}vh;
@@ -37,7 +42,7 @@
                     <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
                 </div>
             </div>
-            <div class="short-description mobile">
+            <div class="short-description {{orientation}} under">
                 <h3 id="name">{{art.name}}</h3>
                 <div class="blurb">{{art.blurb}}</div>
             </div>
