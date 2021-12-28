@@ -357,10 +357,14 @@ $container-padding: 10vh
             display: flex
             flex-flow: column nowrap
             justify-content: center
-            align-items: center
             gap: 20px
 
-            padding-bottom: 10%
+            @include if-not-compressed
+                align-items: center
+
+            @include if-compressed
+                align-items: stretch
+
             margin-left: 1ex
             margin-right: 1ex
 
@@ -374,9 +378,15 @@ $container-padding: 10vh
 
                 display: flex
                 flex-flow: row nowrap
-                align-items: center
-                justify-content: center
                 gap: 5px
+
+                @include if-not-compressed
+                    align-items: flex-end
+                    justify-content: center
+
+                @include if-compressed
+                    align-items: center
+                    justify-content: flex-start
 
                 .name
                     font-family: 'DM Mono', monospace
@@ -396,6 +406,8 @@ $container-padding: 10vh
                     display: none
 
         .prompt
+            margin: 0 auto
+
             @include fluid-type(320px, 1200px, 14px, 16px)
             color: #2e2e2e
             font-family: 'Montserrat', sans-serif

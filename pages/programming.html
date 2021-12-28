@@ -19,7 +19,7 @@
         <a href="{{ prog.link }}" class="item" id="{{ prog.name | slugify }}">
             <div class="name">{{prog.name}}</div>
             <div class="blurb">{{prog.blurb | markdownify}}</div>
-            <p>→</p>
+            <p class="arrow">→</p>
         </a>
         {% endfor %}
     </article>
