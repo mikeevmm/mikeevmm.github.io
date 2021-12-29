@@ -14,12 +14,8 @@
     scroll-snap-type: y proximity
     scroll-behavior: smooth
 
-.scroll-snap
-    scroll-snap-align: start
-
-// Elements for which scroll snap should only apply on desktop
-.scroll-snap-desktop
-    @media screen and ( min-width: $mobile-limit )
+@include if-not-compressed
+    .scroll-snap
         scroll-snap-align: start
 
 .screen
