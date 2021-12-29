@@ -28,7 +28,7 @@
             <div class="content">
                 <div class="short-description {{orientation}} side">
                     <h3 class="name">{{art.name}}</h3>
-                    <p class="blurb">{{art.blurb}}</p>
+                    <p class="blurb">{{art.blurb | smartify }}</p>
                     </p>
                 </div>
                 <div
@@ -39,12 +39,12 @@
                         {% else %}
                             max-height: {{ 90 | divided_by: art.image.ratio }}vw;
                         {% endif %}">
-                    <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
+                    <img src="/{{art.image.path}}" alt="{{art.image.alt}}" loading="lazy">
                 </div>
             </div>
             <div class="short-description {{orientation}} under">
                 <h3 id="name">{{art.name}}</h3>
-                <div class="blurb">{{art.blurb}}</div>
+                <div class="blurb">{{art.blurb | smartify }}</div>
             </div>
             <div class="long-description">{{ art.description | markdownify }}</div>
         </article>
