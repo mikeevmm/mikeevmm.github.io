@@ -1,0 +1,34 @@
+@import 'mixins.sass'
+
+header, footer
+    width: 100%
+
+    box-sizing: border-box
+
+    padding: 1em
+    font-family: 'Montserrat', sans-serif
+    
+    nav
+        width: 20%
+
+        display: flex
+        flex-flow: row nowrap
+        justify-content: space-between
+
+        @media screen and ( max-width: $mobile-limit )
+            width: 100%
+            justify-content: space-evenly
+
+header
+    position: sticky
+    top: 0
+    background-color: $background
+
+footer
+    padding-top: min(30px, 5vh)
+
+@include if-not-compressed
+    footer
+        nav
+            margin-left: auto
+            margin-right: 5vw

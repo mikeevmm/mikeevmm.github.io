@@ -1,0 +1,466 @@
+---
+---
+// Above "front-matter" is needed for Jekyll to process this file correctly.
+
+@import mixins.sass
+
+#viewport
+    width: 100vw
+    height: 100vh
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+    overflow-y: auto
+    scroll-snap-type: y proximity
+    scroll-behavior: smooth
+
+.scroll-snap
+    scroll-snap-align: start
+
+// Elements for which scroll snap should only apply on desktop
+.scroll-snap-desktop
+    @media screen and ( min-width: $mobile-limit )
+        scroll-snap-align: start
+
+.screen
+    width: 100%
+    height: 1px // @see stackoverflow:8468066
+    min-height: 100vh
+
+.wavy-underline
+    $underline-size: 6px
+    // $light-accent is explicitly embeded in the string because of URL escapes
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg preserveAspectRatio='xMinYMin meet' id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift 2s linear infinite;}@keyframes shift {from {transform:translateX(0); stroke-dashoffset:0;}to {transform:translateX(-20px); stroke-dashoffset:-14;}}%3C/style%3E%3Cpath fill='none' stroke='%23aeaeae' stroke-dasharray='5,2' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E")
+    background-position: 0 1.1em
+    background-size: auto $underline-size
+    background-repeat: repeat-x
+    padding-bottom: $underline-size
+
+
+#bio
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+    gap: 4ex
+
+    @media screen and ( max-width: $mobile-limit )
+        flex-flow: column nowrap
+        gap: 3em
+
+    .flex-padding
+        flex-grow: 3
+
+    .text-container
+        display: block
+        width: auto
+        max-width: 40vw
+
+        font-family: 'Montserrat', sans-serif
+        font-weight: 200
+        font-size: \max(3vw, 5vh)
+        text-align: right
+
+        padding-right: 1em
+
+        @media screen and ( max-width: $mobile-limit )
+            text-align: center
+            padding-right: 0
+            padding-top: 3vh
+            max-width: 90vw
+
+        a
+            color: inherit
+            text-decoration: none
+
+        // Only change links' color on desktop
+        @media screen and ( min-width: $mobile-limit )    
+            a:hover
+                color: $light-accent
+    
+    .me
+        position: relative
+        display: block
+        height: 50vh
+
+        @media screen and ( max-width: $mobile-limit )
+            height: 30vh
+        
+        .back-circle
+            position: absolute
+            bottom: 10%
+            right: 15%
+            transform: translate(50%, 50%)
+
+            width: 25%
+            height: 25%
+            
+            background-color: $background
+            border-radius: 50%
+            z-index: 1
+
+
+        .dash-circle
+            position: absolute
+            top: 50%
+            left: 50%
+
+            @keyframes circle-spin
+                0%
+                    transform: translate(-50%, -50%) rotate(0deg)
+                100%
+                    transform: translate(-50%, -50%) rotate(360deg)
+
+            animation: circle-spin 240s linear infinite
+
+            width: 90%
+            height: 90%
+            @media screen and ( max-width: $mobile-limit )
+                width: 115%
+                height: 115%
+            
+            z-index: 2
+                
+            // SVG Properties
+            stroke: $background
+            stroke-dasharray: 2,120%
+            stroke-width: 4
+            @media screen and ( max-width: $mobile-limit )
+                stroke: $light-accent
+                stroke-dasharray: 2,60%
+                stroke-width: 2
+
+
+        img
+            width: 100%
+            height: 100%
+            border-radius: 50%
+            object-fit: contain
+
+$container-padding: 10vh
+
+#physics,#art,#programming
+    .container
+        position: relative
+
+        width: 100%
+        height: 1px // @see stackoverflow:8468066
+        max-width: 162vh
+        min-height: 100%
+        margin: 0 auto
+
+        box-sizing: border-box
+        padding-top: 2em
+        padding-left: $container-padding        
+        padding-right: $container-padding   
+
+        @media screen and ( max-width: $mobile-limit )
+            padding-left: 0
+            padding-right: 0
+
+        .title
+            @include fluid-type(320px, 1200px, 32px, 56px)
+            padding-bottom: .5em
+
+            @media screen and ( max-width: $mobile-limit )
+                padding-left: 10px
+                padding-right: 10px
+
+
+
+#physics
+    position: relative
+
+    .container
+        display: flex
+        flex-flow: column nowrap
+
+    .title
+        font-family: 'DM Serif Display', serif
+        font-style: italic
+        flex-grow: 0
+
+    .leading-text
+        font-family: 'Montserrat', sans-serif
+        font-weight: 200
+        @include fluid-type(320px, 1200px, 18px, 32px)
+        flex-grow: 0
+        margin-bottom: 1em
+
+        @media screen and ( max-width: $mobile-limit )
+            padding-left: 10px
+            padding-right: 10px
+        
+    .content
+        flex-grow: 100
+        flex-shrink: 100
+        min-height: 0
+
+        display: flex
+        flex-flow: column nowrap
+
+        .leading-text
+            flex-grow: 0
+
+        .publications
+            flex-grow: 100
+            flex-shrink: 100
+            min-height: 0
+
+            display: flex
+            flex-flow: column nowrap
+
+            background-color: $black
+            background-clip: padding-box
+
+            padding-top: 2em
+            padding-bottom: 2em
+
+            ul
+                flex-grow: 100
+                flex-shrink: 100
+                min-height: 0
+
+                overflow-x: clip
+                overflow-y: auto
+                scroll-behavior: smooth
+
+                padding: 2em
+                padding-top: 0
+                
+                a
+                    color: inherit
+                    text-decoration: none
+
+                li:not(:last-child)
+                    margin-bottom: 1em
+
+                li
+                    font-family: 'DM Serif Text', serif
+                    @include fluid-type(320px, 1200px, 20px, 24px)
+
+                    .name
+                        color: $off-white
+                    
+                    .description
+                        color: $accent-tone-1
+                        font-size: .8em
+
+#art
+    .container
+        display: flex
+        flex-flow: column nowrap
+
+    .title
+        font-family: 'DM Serif Display', serif
+        font-style: normal
+        text-align: right
+
+        padding-right: 1ex
+
+        flex-grow: 0
+        flex-shrink: 0
+    
+    .prompt
+        display: none
+
+    @media screen and ( max-width: 2*$mobile-limit )
+        .prompt
+            display: block
+            margin-left: auto
+            margin-right: auto
+            margin-top: -2em
+            margin-bottom: 1em
+            @include fluid-type(320px, 1200px, 12px, 14px)
+            color: #2e2e2e
+            font-family: 'Montserrat', sans-serif
+
+    .subcontainer
+        width: 100%
+        height: 1px
+        flex-grow: 100
+        
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        align-items: center
+        flex-basis: 0
+
+        .description
+            text-align: right
+            width: 25vw
+            max-width: 30ex
+            margin-top: 2em
+            margin-left: calc(max(-23vw, -23ex))
+            margin-right: calc(min(1vw, 1ex))
+
+            font-family: 'Montserrat', sans-serif
+
+            .name
+                @include fluid-type(320px, 1200px, 14px, 18px)
+                color: #2e2e2e
+                
+            .blurb
+                @include fluid-type(320px, 1200px, 10px, 14px)
+                color: #4e4e4e
+
+                a
+                    margin-top: 4em
+
+        @media screen and ( max-width: 2*$mobile-limit )
+            .description
+                display: none
+
+        @media screen and ( min-width: 2*$mobile-limit )
+            align-items: start
+        
+        .card
+            // aspect-ratio is set in HTML
+            &.vertical
+                max-width: 90%
+                height: 90%
+            &.horizontal
+                width: 60%
+                max-height: 100%
+            
+            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47)
+            box-sizing: border-box
+            margin: 5px
+            padding: 5px
+
+            text-align: center
+
+            img
+                width: 100%
+                height: 100%
+                border-radius: 10px
+                object-fit: cover
+                
+
+#programming
+    position: relative
+    
+    .container
+        display: flex
+        flex-flow: column nowrap
+
+        .title
+            flex-grow: 0
+            text-align: center
+            font-family: 'DM Mono', monospace
+            font-weight: 500
+
+        .subcontainer
+            height: 1px
+            flex-grow: 100
+
+            display: flex
+            flex-flow: column nowrap
+            justify-content: center
+            gap: 20px
+
+            @include if-not-compressed
+                align-items: center
+
+            @include if-compressed
+                align-items: stretch
+
+            margin-left: 1ex
+            margin-right: 1ex
+
+            .card
+                color: inherit
+                text-decoration: none
+
+                box-shadow: 0px 0px 3px 0px rgba(81, 81, 81, 0.47)
+                box-sizing: border-box
+                padding: 10px
+
+                display: flex
+                flex-flow: row nowrap
+                gap: 5px
+
+                @include if-not-compressed
+                    align-items: flex-end
+                    justify-content: center
+
+                @include if-compressed
+                    align-items: center
+                    justify-content: flex-start
+
+                .name
+                    font-family: 'DM Mono', monospace
+                    font-weight: 500
+                    @include fluid-type(320px, 1200px, 16px, 18px)
+                    color: #2e2e2e
+                    text-align: right
+                    
+                .blurb
+                    font-family: 'Montserrat', sans-serif
+                    @include fluid-type(320px, 1200px, 14px, 16px)
+                    color: #4e4e4e
+                    text-align: left
+
+            @media screen and ( max-height: 450px )
+                .extra
+                    display: none
+
+        .prompt
+            margin: 0 auto
+
+            @include fluid-type(320px, 1200px, 14px, 16px)
+            color: #2e2e2e
+            font-family: 'Montserrat', sans-serif
+
+#social
+    $social-padding: 2vw
+
+    box-sizing: border-box
+    padding-top: $social-padding
+    padding-bottom: $social-padding
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    gap: 2em
+    max-height: calc(100vh - 2*$social-padding)
+
+    a
+        color: inherit
+        text-decoration: none
+
+    .column
+        flex-shrink: 10
+
+        display: inline-flex
+        flex-flow: column nowrap
+        justify-content: center
+        font-family: 'Montserrat', sans-serif
+        font-weight: 400
+        font-size: 3vw
+    
+    #email
+        margin-bottom: 2em
+
+    #github
+        margin-top: 3em
+    
+    $duplicate-spacing: 2.5vh
+
+    .original, .duplicate
+        line-height: $duplicate-spacing
+    
+    @media screen and ( max-width: $mobile-limit )
+        width: 100%
+        
+        flex-flow: column wrap
+        align-items: center
+        justify-content: center
+
+        .column
+            font-size: 10vw
+            display: block
+        
+        #email,#github,#games
+            margin-bottom: 0
+            margin-top: 0

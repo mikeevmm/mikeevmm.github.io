@@ -1,0 +1,128 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi.</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+    <div id="viewport">
+        <div class="screen scroll-snap" id="bio">
+            <div class="text-container">
+                My name is Miguel Murça, and I do <a href="#physics" class="wavy-underline">physics</a>, <a href="#art"
+                    class="wavy-underline">art</a>, and <a href="#programming" class="wavy-underline">programming</a>.
+            </div>
+            <div class="me">
+                <svg class="dash-circle" version="1.1" viewBox="0 0 10 10" height="10mm" width="10mm"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <circle style="fill:none;stroke-linecap:square;stroke-miterlimit:4;stroke-dashoffset:0"
+                        id="path1631" cx="5" cy="5" r="4.8" vector-effect="non-scaling-stroke" />
+                </svg>
+                <img src="assets/me.jpg" alt="This is me.">
+            </div>
+        </div>
+        <div class="screen scroll-snap" id="physics">
+            <div class="container">
+                <h1 class="title">Physics</h1>
+                <div class="content">
+                    <p class="leading-text">I have a Master's in Physics, and am pursuing a PhD, focused on Quantum
+                        Computing.
+                        <!--<a href="physics" class="more">(See more)</a> Nothing to add yet.-->
+                    </p>
+                    <div class="publications">
+                        <ul>
+                            {% for publication in site.data.physics %}
+                            <li>
+                                <a href="{{ publication.link }}">
+                                    <div class="name">{{publication.title}}</div>
+                                    <div class="description">({{publication.description}})</div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                            <li><span class="description">(That's all for now, but keep scrolling)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="screen scroll-snap-desktop" id="art">
+            <div class="container">
+                <h1 class="title">Art</h1>
+                <div class="subcontainer">
+                    {% assign art = site.data.art | first %}
+                    <div class="description">
+                        <h3 class="name">{{art.name}}</h3>
+                        <p class="blurb">{{art.blurb}}<br><a href="pages/art.html">(Click for more)</a>
+                        </p>
+                    </div>
+                    <a href="pages/art.html"
+                        class="card {% if art.image.ratio <= 1 %} vertical{% else %} horizontal{% endif %}"
+                        style="aspect-ratio: {{art.image.ratio}};">
+                        <p class="prompt">(Tap for more)</p>
+                        <img src="/{{art.image.path}}" alt="{{art.image.alt}}">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="screen scroll-snap-desktop" id="programming">
+            <div class="container">
+                <h1 class="title">Programming</h1>
+                <div class="subcontainer">
+                    {% for item in site.data.programming limit: 5 %}
+                    <a href="{{item.link}}"
+                        class="card{% if forloop.index > 3 %} extra{% endif %}">
+                        <div class="name">{{item.name}}</div>
+                        <div class="blurb">{{item.blurb | markdownify}}</div>
+                    </a>
+                    {% endfor %}
+                    <a href="pages/programming.html" class="prompt">more →</a>
+                </div>
+            </div>
+        </div>
+        <div class="screen scroll-snap" id="social">
+            <a class="column" id="email" href="mailto:miguelmurca+portfolio@gmail.com">
+                <div class="original">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+                <div class="duplicate">Email</div>
+            </a>
+            <a class="column" id="github" href="https://github.com/mikeevmm">
+                <div class="original">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+                <div class="duplicate">Github</div>
+            </a>
+            <a class="column" id="games" href="https://miguelmurca.itch.io">
+                <div class="original">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+                <div class="duplicate">Itch.io</div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+- name: quik
+  blurb: lets you define and qui~~c~~kly jump to bookmarked directories in the shell.
+  link: https://github.com/mikeevmm/quik
+- name: boyl
+  blurb: is a command-line tool written in Rust to manage template folders.
+  link: https://github.com/mikeevmm/boyl
+- name: sane
+  blurb: is a command runner made simple.
+  link: https://github.com/mikeevmm/sane
+- name: jfc
+  blurb: is a utility to make reviewing ArXiv papers easier.
+  link: https://github.com/mikeevmm/jfc
+- name: qop
+  blurb: >
+    is a variational quantum circuit simulator and optimizer written in C, with a Python
+    interface.
+  link: https://github.com/mikeevmm/qop
+- name: eq
+  blurb: is a LaTeX to PNG-in-your-clipboard conversion tool.
+  link: https://github.com/mikeevmm/eq
+- name: nobeamer
+  blurb: is a pure TeX macro package to make presentations.
+  link: https://github.com/mikeevmm/nobeamer
+- name: pomo
+  blurb: is a simple pomodoro timer.
+  link: https://github.com/mikeevmm/pomo
+- name: wellbeing
+  blurb: is a simple tool for wellbeing reminders.
+  link: https://github.com/mikeevmm/wellbeing
+- name: template
+  blurb: is boyl's younger brother.
+  link: https://github.com/mikeevmm/template

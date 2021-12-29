@@ -1,4 +1,6 @@
-_site
-.sass-cache
-.jekyll-metadata
-.vscode
+.*
+!.gitignore
+!.nojekyll
+node_modules
+_site/
+Gemfile.lock
