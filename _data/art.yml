@@ -13,7 +13,7 @@
     complement this alternate reality, we created an accompanying user manual in LaTeX,
     displayed as part of the installation.
     
-    [I expanded on the details of the piece here.](https://twitter.com/mikeevmm/status/1471163276247638023)
+    [You can find a Twitter thread expanding on the details of the piece at @mikeevmm.](https://twitter.com/mikeevmm/status/1471163276247638023)
   image:
     path: "assets/art/tau800b.jpg"
     alt: "Picture of the TAU-800B Super installation, in Coimbra, Portugal."
@@ -41,13 +41,14 @@
 - name: This Website
   blurb: This!
   description: |
-    This website was fully crafted by hand, with HTML and CSS only. It's hosted on Github
+    meegleeto.com was fully crafted by hand, with HTML and CSS only. It's hosted on Github
     Pages, and so uses Jekyll as a static website engine. I made a point not to use
     Javascript: I'm not necessarily a luddite, but I like my static pages static, and you
     can get very far with CSS nowadays. This is the second iteration on the design, as the
     first version was much more "bootstrap"-y. This time, I went for something a little
     more brutalist, with an eye towards typography. This is more in line with my recent
-    work and interests.
+    work and interests. Furthermore, the print version of my portfolio is simply a print
+    of my homepage, adequately formatted with CSS.
   image:
     path: "assets/art/website.png"
     alt: "A screenshot of the current webpage."
@@ -69,7 +70,7 @@
     audience for this book, admittedly. Or rather: I'm the audience for this book, and I'm
     fine with that.
 
-    [Book on itch.io](https://miguelmurca.itch.io/contos-do-malibu-cola)
+    [You can find a free copy of the book on my Itch.io page.](https://miguelmurca.itch.io/contos-do-malibu-cola)
 - name: VCV Rack Workshop
   blurb: >
     I hosted a workshop on modular synthesis at the Physics Department of the University
@@ -77,8 +78,8 @@
     well as the theoretical aspects behind synthesis.
   description: |
     I found out about modular synthesiser music on the 1st of November of 2016, by means
-    of [a tweet](https://twitter.com/mikeevmm/status/793503609560375296) of
-    [Renaud Bérard](https://twitter.com/renaudbedard) (a co-author of the videogame FEZ),
+    of [a tweet](https://twitter.com/mikeevmm/status/793503609560375296) by
+    [Renaud Bérard](https://twitter.com/renaudbedard) (a co-author of the video-game FEZ),
     and immediately expressed my interest in simulators that would allow me to try it for
     myself. Almost exactly one year later, on the 5th of November of 2017,
     [@TheWzzard](https://twitter.com/TheWzzard) introduced me to the wonderful world of
@@ -107,7 +108,7 @@
     now.
     It's the first full game I published made on Unity and targeting HTML5.
 
-    [Game on itch.io](https://miguelmurca.itch.io/pon)
+    [The game is freely available on my Itch.io page.](https://miguelmurca.itch.io/pon)
   image:
     path: "assets/art/pon.gif"
     alt: "An animated image of a board of Pon being assembled."
@@ -132,17 +133,17 @@
   blurb: >
     A multiplayer game. It garnered some success, winning prizes in the 2016 Lisbon Maker Faire.
   description: |
-    Planet Squares Inc. came from a wish of making a bigger game --- both gameplay and
+    Planet Squares Inc. came from a wish of making a bigger game --- both game-play and
     production wise --- and of applying what I'd learned so far as a game developer to a
     new project.
     On the other hand, PSI also allowed me to focus on narrative, rather than just on
-    gameplay, something I'd wanted to do after learning of titles such as
+    game-play, something I'd wanted to do after learning of titles such as
     [Battleblock Theater](http://www.battleblocktheater.com/). Even though the game's text
-    is not central to the gameplay and intends to be unobtrusive, I was able to develop a
+    is not central to the game-play and intends to be unobtrusive, I was able to develop a
     character through monologue, and a sort of environmental story-telling.
     Planet Squares Inc. won several awards at [MakerFaire Lisbon 2016](http://web.archive.org/web/20161024033505/http://makerfairelisbon.com/en/).
 
-    [Game on itch.io](https://miguelmurca.itch.io/psi)
+    [The game is freely available on my Itch.io page.](https://miguelmurca.itch.io/psi)
   image:
     path: "assets/art/planetsquaresinc.png"
     alt: "A screenshot of a round of Planet Squares Inc."
@@ -159,7 +160,7 @@
 
     [The game was featured in Warp Door.](http://warpdoor.com/2014/08/09/ultra-electronic-ascension-miguel-murca/)
 
-    [Game on itch.io](https://miguelmurca.itch.io/uea).
+    [The game is freely available on my Itch.io page.](https://miguelmurca.itch.io/uea).
   image:
     path: "assets/art/ultraelectronicascension.png"
     alt: "A screenshot of the game."

@@ -30,7 +30,7 @@ $accent-tone-2: #fa980c
 $mobile-limit: 580px
 
 @mixin if-compressed
-    @media screen and ( max-width: 2*$mobile-limit )
+    @media print, screen and ( max-width: 2*$mobile-limit )
         @content
 
 @mixin if-not-compressed

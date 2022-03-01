@@ -5,6 +5,14 @@
 @import 'mixins.sass'
 @import 'headers.sass'
 
+@media not print
+    .print
+        display: none
+
+@media print
+    .print
+        display: auto
+
 #viewport
     width: 100%
     min-height: 100vh
@@ -104,4 +112,59 @@
                     height: 100%
                     border-radius: 10px
                     object-fit: cover
-                
+        
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,600;1,300&display=swap') print
+
+@media print
+    header,footer
+        display: none
+
+    .cover
+        width: 100%
+        height: 100vh
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        
+        box-sizing: border-box
+        padding-left: 5vw    
+
+        h1
+            font-family: 'Noto Serif Display', serif
+            font-weight: 600
+            @include fluid-type(320px, 1200px, 20px, 24px)
+            color: #2e2e2e
+
+        h2
+            font-family: 'Noto Serif Display', serif
+            font-family: 300
+            font-style: italic
+            @include fluid-type(320px, 1200px, 18px, 20px)
+            color: #4e4e4e
+
+    a
+        color: inherit !important
+        text-decoration: none !important
+
+    .item
+        height: 200vh !important
+
+    .content
+        height: 100vh !important
+        justify-content: center
+
+    .short-description
+        display: none
+
+    .long-description
+        height: 100vh !important
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        text-align: center !important
+
+    .item,.long-description,.content
+        padding-bottom: 0 !important
+        padding-top: 0 !important
+        margin-bottom: 0 !important
+        margin-top: 0 !important
