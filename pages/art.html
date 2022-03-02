@@ -43,7 +43,7 @@
                         {% else %}
                             max-height: {{ 90 | divided_by: art.image.ratio }}vw;
                         {% endif %}">
-                    <img src="/{{art.image.path}}" alt="{{art.image.alt}}" loading="lazy">
+                    <img src="../{{art.image.path}}" alt="{{art.image.alt}}" loading="lazy">
                 </div>
             </div>
             <div class="short-description {{orientation}} under">
