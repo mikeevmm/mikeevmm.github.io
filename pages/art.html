@@ -28,7 +28,7 @@
         {% else %}
             {% assign orientation = "horizontal" %}
         {% endif %}
-        <article class="item">
+        <article class="item" id="{{art.name | slugify}}">
             <div class="content">
                 <div class="short-description {{orientation}} side">
                     <h3 class="name">{{art.name}}</h3>
