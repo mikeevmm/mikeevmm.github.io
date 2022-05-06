@@ -1,8 +1,8 @@
 - name: lonk
-  blurb: a self-hostable link shortener.
+  blurb: is a self-hostable link shortener.
   link: https://git.cumperativa.xyz/meeg_leeto/lonk
 - name: cumperativa.xyz
-  blurb: a shared tilde for me and friends
+  blurb: is a shared tilde for me and friends
   link: https://cumperativa.xyz
 - name: quik
   blurb: lets you define and qui~~c~~kly jump to bookmarked directories in the shell.
