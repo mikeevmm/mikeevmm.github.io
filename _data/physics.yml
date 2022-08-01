@@ -1,3 +1,9 @@
+- title: Simplifying a classical-quantum algorithm interpolation with quantum singular value transformations
+  description: >
+    Publication on using Quantum Singular Value Transforms to think about
+    algorithms with limited coherence times, and simplifying the derivation of
+    a particular instance.
+  link: https://arxiv.org/abs/2207.14810
 - title: Quantum Computing With a Single Qubit
   description: > 
     My final seminars' class presentation for a Physics master's course, 
