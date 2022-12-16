@@ -2,7 +2,7 @@
 ---
 // Above "front-matter" is needed for Jekyll to process this file correctly.
 
-@import mixins.sass
+@import "mixins.sass"
 
 #viewport
     width: 100vw
@@ -40,7 +40,7 @@
     align-items: center
     gap: 4ex
 
-    @media screen and ( max-width: $mobile-limit )
+    @include if-compressed
         flex-flow: column nowrap
         gap: 3em
 
@@ -59,7 +59,7 @@
 
         padding-right: 1em
 
-        @media screen and ( max-width: $mobile-limit )
+        @include if-compressed
             text-align: center
             padding-right: 0
             padding-top: 3vh
@@ -70,7 +70,7 @@
             text-decoration: none
 
         // Only change links' color on desktop
-        @media screen and ( min-width: $mobile-limit )    
+        @include if-not-mobile    
             a:hover
                 color: $light-accent
     
@@ -79,7 +79,7 @@
         display: block
         height: 50vh
 
-        @media screen and ( max-width: $mobile-limit )
+        @include if-mobile
             height: 30vh
         
         .back-circle
@@ -111,7 +111,7 @@
 
             width: 90%
             height: 90%
-            @media screen and ( max-width: $mobile-limit )
+            @include if-mobile
                 width: 115%
                 height: 115%
             
@@ -121,7 +121,7 @@
             stroke: $background
             stroke-dasharray: 2,120%
             stroke-width: 4
-            @media screen and ( max-width: $mobile-limit )
+            @include if-mobile
                 stroke: $light-accent
                 stroke-dasharray: 2,60%
                 stroke-width: 2
@@ -150,7 +150,7 @@ $container-padding: 10vh
         padding-left: $container-padding        
         padding-right: $container-padding   
 
-        @media screen and ( max-width: $mobile-limit )
+        @include if-mobile
             padding-left: 0
             padding-right: 0
 
@@ -158,7 +158,7 @@ $container-padding: 10vh
             @include fluid-type(320px, 1200px, 32px, 56px)
             padding-bottom: .5em
 
-            @media screen and ( max-width: $mobile-limit )
+            @include if-mobile
                 padding-left: 10px
                 padding-right: 10px
 
@@ -183,7 +183,7 @@ $container-padding: 10vh
         flex-grow: 0
         margin-bottom: 1em
 
-        @media screen and ( max-width: $mobile-limit )
+        @include if-mobile
             padding-left: 10px
             padding-right: 10px
         
@@ -260,7 +260,7 @@ $container-padding: 10vh
     .prompt
         display: none
 
-    @media screen and ( max-width: 2*$mobile-limit )
+    @include if-compressed
         .prompt
             display: block
             margin-left: auto
@@ -303,11 +303,11 @@ $container-padding: 10vh
                 a
                     margin-top: 4em
 
-        @media screen and ( max-width: 2*$mobile-limit )
+        @include if-compressed
             .description
                 display: none
 
-        @media screen and ( min-width: 2*$mobile-limit )
+        @include if-not-compressed
             align-items: start
         
         .card
@@ -339,7 +339,7 @@ $container-padding: 10vh
     .container
         display: flex
         flex-flow: column nowrap
-
+        
         .title
             flex-grow: 0
             text-align: center
@@ -347,6 +347,11 @@ $container-padding: 10vh
             font-weight: 500
 
         .subcontainer
+            box-sizing: content-box
+            @include if-mobile
+                margin-left: 2em
+                margin-right: 2em
+
             height: 1px
             flex-grow: 100
 
@@ -355,14 +360,11 @@ $container-padding: 10vh
             justify-content: center
             gap: 20px
 
-            @include if-not-compressed
+            @include if-not-mobile
                 align-items: center
 
-            @include if-compressed
+            @include if-mobile
                 align-items: stretch
-
-            margin-left: 1ex
-            margin-right: 1ex
 
             .card
                 color: inherit
@@ -376,11 +378,11 @@ $container-padding: 10vh
                 flex-flow: row nowrap
                 gap: 5px
 
-                @include if-not-compressed
+                @include if-not-mobile
                     align-items: flex-end
                     justify-content: center
 
-                @include if-compressed
+                @include if-mobile
                     align-items: center
                     justify-content: flex-start
 
@@ -419,7 +421,7 @@ $container-padding: 10vh
     flex-flow: row nowrap
     justify-content: center
     gap: 2em
-    max-height: calc(100vh - 2*$social-padding)
+    max-height: calc(100vh - 2*#{$social-padding})
 
     a
         color: inherit
@@ -446,7 +448,7 @@ $container-padding: 10vh
     .original, .duplicate
         line-height: $duplicate-spacing
     
-    @media screen and ( max-width: $mobile-limit )
+    @include if-compressed
         width: 100%
         
         flex-flow: column wrap
