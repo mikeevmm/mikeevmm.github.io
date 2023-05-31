@@ -1,3 +1,9 @@
+- title: "Making the cut: two methods for breaking down a quantum algorithm"
+  description: >
+    Building upon previous work, we propose specific architectures for
+    quantum-classical hybrid algorithms with provable guarantees in the query
+    model.
+  link: https://arxiv.org/abs/2305.10485
 - title: Simplifying a classical-quantum algorithm interpolation with quantum singular value transformations
   description: >
     Publication on using Quantum Singular Value Transforms to think about
