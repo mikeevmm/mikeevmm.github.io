@@ -1,3 +1,20 @@
+- name: meeg
+  blurb: >
+    "Um dia acordei e tinha algo para dizer. Pareceu-me apropriado pôr um beat
+    de fundo. De resto não sei se tenho direito a dizer nada disto."
+  description: |
+    Though I don't believe anyone I personally know would imagine me writing a
+    rap track, the effort brought together previous experimenting with music
+    making, sampling, and poem writing. Perhaps because of this, and completely
+    inspired by the structure of MFDOOM's work,these songs don't have so much a
+    traditional verse/chorus structure, but rather work more as a specific
+    delivery of a poem.
+
+    [The EP is available on my Bandcamp page.](https://miguelmurca.bandcamp.com/album/meeg)
+  image:
+    path: "assets/art/meeg.jpg"
+    alt: "Album cover of the 'meeg' single."
+    ratio: 1.0
 - name: TAU-800B Super
   blurb: >
     A multidisciplinary work involving time-travel, presented for the Processing Community
@@ -14,6 +31,10 @@
     displayed as part of the installation.
     
     [You can find a Twitter thread expanding on the details of the piece at @mikeevmm.](https://twitter.com/mikeevmm/status/1471163276247638023)
+
+    (See also a successor piece, *TAU-800 A*, submitted for Ars Electronica
+    2022, for which the submission video is [available
+    online](https://commutative.xyz/~miguelmurca/tau.mp4).)
   image:
     path: "assets/art/tau800b.jpg"
     alt: "Picture of the TAU-800B Super installation, in Coimbra, Portugal."
@@ -65,7 +86,7 @@
     Mário-Henrique Leiria. The latter, being a book published during the Portuguese
     dictatorship of 1933-74, manages to violently critique fascism under a veil of humor
     and dadaism. After reading "Contos do Gin-Tonic", and its sequel, "Novos Contos do
-    Gin (seguidos de algumas Fábulas do Futuro Pŕoximo)", I felt compelled to write texts
+    Gin (seguidos de algumas Fábulas do Futuro Próximo)", I felt compelled to write texts
     in the same vein, dealing with personal and existential anxieties. There's hardly an
     audience for this book, admittedly. Or rather: I'm the audience for this book, and I'm
     fine with that.

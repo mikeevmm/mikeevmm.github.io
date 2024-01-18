@@ -7,17 +7,15 @@
   $u3: unit($min-font-size)
   $u4: unit($max-font-size)
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 
-    & 
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4
+    &
       font-size: $min-font-size
-      @media screen and (min-width: $min-vw) 
+      @media screen and (min-width: $min-vw)
         font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))
-      @media screen and (min-width: $max-vw) 
+      @media screen and (min-width: $max-vw)
         font-size: $max-font-size
 
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;900&family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:wght@400&family=DM+Mono:wght@500&family=Asset&family=Karla:wght@300&display=swap')
-
 
 $background: #fefefe
 $off-white: #fafafa
@@ -28,11 +26,20 @@ $accent-tone-1: #e4007d
 $accent-tone-2: #fa980c
 
 $mobile-limit: 580px
+$compressed-limit: 1000px 
+
+@mixin if-mobile
+  @media screen and ( max-width: $mobile-limit )
+    @content
+
+@mixin if-not-mobile
+  @media screen and ( min-width: $mobile-limit )
+    @content
 
 @mixin if-compressed
-    @media print, screen and ( max-width: 2*$mobile-limit )
-        @content
+  @media print, screen and ( max-width: $compressed-limit )
+    @content
 
 @mixin if-not-compressed
-    @media screen and ( min-width: 2*$mobile-limit )
-        @content
+  @media print, screen and ( min-width: $compressed-limit )
+    @content

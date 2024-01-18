@@ -43,7 +43,7 @@
                             <li>
                                 <a href="{{ publication.link }}">
                                     <div class="name">{{publication.title}}</div>
-                                    <div class="description">({{publication.description}})</div>
+                                    <div class="description">({{publication.description | strip}})</div>
                                 </a>
                             </li>
                             {% endfor %}
