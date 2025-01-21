@@ -1,3 +1,10 @@
+- title: "An access model for quantum encoded data"
+  description: >
+    A work investigating how classical access to quantum computation can be
+    abstracted, what counts as "faking" a quantum computation, and how powerful
+    the resulting abstracted model is. Contains applications to the problem of
+    computing a distributed inner product.
+  link: https://arxiv.org/abs/2412.01889
 - title: "Making the cut: two methods for breaking down a quantum algorithm"
   description: >
     Building upon previous work, we propose specific architectures for
